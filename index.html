@@ -15,13 +15,14 @@
               display: ['Montserrat', 'sans-serif'],
             },
             colors: {
-              'accent-primary': '#FF0033', /* Vibrant Red */
-              'accent-secondary': '#1a1a1a', 
-              'deep-black': '#050505',
-              'gray-surface': '#141414',
-              'gray-highlight': '#1f1f1f',
+              'accent-primary': '#E60023', /* Slightly deeper energetic red */
+              'accent-hover': '#ff1f40',
+              'deep-black': '#0f1115', /* Rich dark charcoal, not pure black */
+              'gray-surface': '#181b21', /* Lighter surface for cards */
+              'gray-lighter': '#232730', /* Even lighter for hovers/inputs */
+              'border-dark': '#2d3340', /* Visible borders */
               'text-primary': '#ffffff',
-              'text-secondary': '#a3a3a3'
+              'text-secondary': '#9ca3af'
             },
           },
         },
@@ -30,8 +31,8 @@
     <style>
       html, body {
         height: 100%;
-        background-color: #050505;
-        color: #e5e5e5;
+        background-color: #0f1115;
+        color: #f3f4f6;
         font-family: 'Open Sans', sans-serif;
       }
       h1, h2, h3, h4, h5, h6 {
@@ -51,15 +52,15 @@
         width: 10px;
       }
       ::-webkit-scrollbar-track {
-        background: #050505; 
+        background: #0f1115; 
       }
       ::-webkit-scrollbar-thumb {
         background: #333; 
         border-radius: 5px;
-        border: 2px solid #050505;
+        border: 1px solid #0f1115;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #FF0033; 
+        background: #E60023; 
       }
     </style>
   <script type="importmap">

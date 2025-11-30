@@ -11,10 +11,10 @@ export const JobCard: React.FC<JobCardProps> = ({ job, onClick }) => {
   return (
     <div 
       onClick={onClick}
-      className={`relative group bg-gray-surface rounded-lg overflow-hidden border transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent-primary/10
+      className={`relative group bg-gray-surface rounded-xl overflow-hidden border transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent-primary/10
         ${job.isPromoted 
-          ? 'border-accent-primary/60 shadow-lg shadow-accent-primary/5' 
-          : 'border-gray-800 hover:border-gray-600'
+          ? 'border-accent-primary/50 shadow-lg shadow-accent-primary/5' 
+          : 'border-border-dark hover:border-gray-500'
         }`}
     >
       {job.isPromoted && (
@@ -50,15 +50,15 @@ export const JobCard: React.FC<JobCardProps> = ({ job, onClick }) => {
           {job.tags.map((tag, index) => (
             <span 
               key={index} 
-              className="px-2 py-1 bg-deep-black text-[10px] text-gray-400 font-bold uppercase tracking-wide rounded border border-gray-700 group-hover:border-gray-600 transition-colors"
+              className="px-2 py-1 bg-gray-lighter text-[10px] text-gray-300 font-bold uppercase tracking-wide rounded border border-border-dark group-hover:border-gray-500 transition-colors"
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="flex items-center justify-between border-t border-gray-800 pt-4 mt-auto">
-           <span className="text-xs text-gray-600 font-bold uppercase tracking-wider">{job.postedDate}</span>
+        <div className="flex items-center justify-between border-t border-border-dark pt-4 mt-auto">
+           <span className="text-xs text-gray-500 font-bold uppercase tracking-wider">{job.postedDate}</span>
            <button className="flex items-center text-white font-bold text-xs uppercase tracking-widest group-hover:text-accent-primary transition-colors">
              Details <ArrowRight size={14} className="ml-2" />
            </button>
