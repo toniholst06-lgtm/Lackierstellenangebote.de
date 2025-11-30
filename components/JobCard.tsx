@@ -11,14 +11,14 @@ export const JobCard: React.FC<JobCardProps> = ({ job, onClick }) => {
   return (
     <div 
       onClick={onClick}
-      className={`relative group bg-gray-surface rounded-lg overflow-hidden border transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent-primary/20
+      className={`relative group bg-gray-surface rounded-lg overflow-hidden border transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent-primary/10
         ${job.isPromoted 
-          ? 'border-accent-primary/50' 
+          ? 'border-accent-primary/60 shadow-lg shadow-accent-primary/5' 
           : 'border-gray-800 hover:border-gray-600'
         }`}
     >
       {job.isPromoted && (
-          <div className="absolute top-0 right-0 bg-accent-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-lg z-10">
+          <div className="absolute top-0 right-0 bg-accent-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-lg z-10 shadow-md">
               Top Job
           </div>
       )}
@@ -33,16 +33,16 @@ export const JobCard: React.FC<JobCardProps> = ({ job, onClick }) => {
 
         <div className="space-y-3 mb-6">
           <div className="flex items-center text-sm text-gray-300">
-            <MapPin size={16} className="text-accent-primary mr-3" />
-            {job.location}
+            <MapPin size={16} className="text-accent-primary mr-3 flex-shrink-0" />
+            <span className="truncate">{job.location}</span>
           </div>
           <div className="flex items-center text-sm text-gray-300">
-            <Clock size={16} className="text-accent-primary mr-3" />
-            {job.type}
+            <Clock size={16} className="text-accent-primary mr-3 flex-shrink-0" />
+            <span>{job.type}</span>
           </div>
           <div className="flex items-center text-sm text-white font-bold">
-            <Euro size={16} className="text-accent-primary mr-3" />
-            {job.salary}
+            <Euro size={16} className="text-accent-primary mr-3 flex-shrink-0" />
+            <span>{job.salary}</span>
           </div>
         </div>
 
@@ -50,7 +50,7 @@ export const JobCard: React.FC<JobCardProps> = ({ job, onClick }) => {
           {job.tags.map((tag, index) => (
             <span 
               key={index} 
-              className="px-2 py-1 bg-black text-[10px] text-gray-400 font-bold uppercase tracking-wide rounded border border-gray-800"
+              className="px-2 py-1 bg-deep-black text-[10px] text-gray-400 font-bold uppercase tracking-wide rounded border border-gray-700 group-hover:border-gray-600 transition-colors"
             >
               {tag}
             </span>
