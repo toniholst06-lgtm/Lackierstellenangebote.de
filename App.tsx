@@ -23,9 +23,9 @@ function App() {
   };
 
   return (
-    <div className="bg-deep-black min-h-screen text-white font-sans selection:bg-accent-primary selection:text-white flex flex-col">
+    <div className="bg-white min-h-screen w-full text-gray-900 font-sans selection:bg-accent-primary selection:text-white flex flex-col">
       <Navbar currentPage={currentPage} onNavigate={setCurrentPage} />
-      <main className="flex-grow flex flex-col">
+      <main className="flex-grow flex flex-col w-full bg-white">
         {renderPage()}
       </main>
       <Footer />

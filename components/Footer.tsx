@@ -3,17 +3,20 @@ import { SprayCan } from 'lucide-react';
 
 export const Footer = () => {
   return (
-    <footer className="bg-black border-t border-white/10 py-20 text-center md:text-left">
+    <footer className="bg-gray-900 border-t border-gray-800 py-20 text-center md:text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1 flex flex-col items-center md:items-start">
             <div className="flex items-center mb-6">
-                <div className="border border-white p-1.5 mr-3">
+                <div className="bg-accent-primary p-2 mr-3 rounded-md">
                     <SprayCan className="text-white w-5 h-5" />
                 </div>
-                <span className="text-lg font-display font-bold text-white uppercase tracking-widest">
-                Lackierer<span className="text-gray-500">Stellen</span>
-                </span>
+                <div className="flex flex-col">
+                    <span className="text-lg font-display font-bold text-white uppercase tracking-widest leading-none">
+                    Lackierer
+                    </span>
+                    <span className="text-[10px] text-gray-400 uppercase tracking-widest">Stellenangebote.de</span>
+                </div>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed max-w-xs font-serif italic">
               Exzellenz in der Vermittlung von Fachkräften für Oberflächentechnik.
@@ -48,7 +51,7 @@ export const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 uppercase tracking-widest">
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 uppercase tracking-widest">
           <span>&copy; {new Date().getFullYear()} LackiererStellen.de</span>
           <span className="mt-2 md:mt-0">Made in Germany</span>
         </div>

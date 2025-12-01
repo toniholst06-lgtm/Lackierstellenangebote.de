@@ -11,10 +11,10 @@ export const JobCard: React.FC<JobCardProps> = ({ job, onClick }) => {
   return (
     <div 
       onClick={onClick}
-      className={`relative group bg-gray-surface rounded-xl overflow-hidden border transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent-primary/10
+      className={`relative group bg-white rounded-xl overflow-hidden border transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-xl
         ${job.isPromoted 
-          ? 'border-accent-primary/50 shadow-lg shadow-accent-primary/5' 
-          : 'border-border-dark hover:border-gray-500'
+          ? 'border-accent-primary/30 shadow-lg shadow-accent-primary/5' 
+          : 'border-gray-200 hover:border-gray-300 shadow-sm'
         }`}
     >
       {job.isPromoted && (
@@ -25,22 +25,22 @@ export const JobCard: React.FC<JobCardProps> = ({ job, onClick }) => {
       
       <div className="p-8">
         <div className="mb-6">
-            <h3 className="text-xl font-display font-black text-white group-hover:text-accent-primary transition-colors uppercase leading-tight mb-2">
+            <h3 className="text-xl font-display font-black text-gray-900 group-hover:text-accent-primary transition-colors uppercase leading-tight mb-2">
               {job.title}
             </h3>
-            <p className="text-gray-400 font-medium">{job.company}</p>
+            <p className="text-gray-500 font-medium font-sans">{job.company}</p>
         </div>
 
         <div className="space-y-3 mb-6">
-          <div className="flex items-center text-sm text-gray-300">
+          <div className="flex items-center text-sm text-gray-600">
             <MapPin size={16} className="text-accent-primary mr-3 flex-shrink-0" />
             <span className="truncate">{job.location}</span>
           </div>
-          <div className="flex items-center text-sm text-gray-300">
+          <div className="flex items-center text-sm text-gray-600">
             <Clock size={16} className="text-accent-primary mr-3 flex-shrink-0" />
             <span>{job.type}</span>
           </div>
-          <div className="flex items-center text-sm text-white font-bold">
+          <div className="flex items-center text-sm text-gray-900 font-bold">
             <Euro size={16} className="text-accent-primary mr-3 flex-shrink-0" />
             <span>{job.salary}</span>
           </div>
@@ -50,16 +50,16 @@ export const JobCard: React.FC<JobCardProps> = ({ job, onClick }) => {
           {job.tags.map((tag, index) => (
             <span 
               key={index} 
-              className="px-2 py-1 bg-gray-lighter text-[10px] text-gray-300 font-bold uppercase tracking-wide rounded border border-border-dark group-hover:border-gray-500 transition-colors"
+              className="px-2 py-1 bg-gray-100 text-[10px] text-gray-600 font-bold uppercase tracking-wide rounded border border-gray-200 group-hover:bg-white group-hover:border-gray-300 transition-colors"
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="flex items-center justify-between border-t border-border-dark pt-4 mt-auto">
-           <span className="text-xs text-gray-500 font-bold uppercase tracking-wider">{job.postedDate}</span>
-           <button className="flex items-center text-white font-bold text-xs uppercase tracking-widest group-hover:text-accent-primary transition-colors">
+        <div className="flex items-center justify-between border-t border-gray-100 pt-4 mt-auto">
+           <span className="text-xs text-gray-400 font-bold uppercase tracking-wider">{job.postedDate}</span>
+           <button className="flex items-center text-gray-900 font-bold text-xs uppercase tracking-widest group-hover:text-accent-primary transition-colors">
              Details <ArrowRight size={14} className="ml-2" />
            </button>
         </div>
