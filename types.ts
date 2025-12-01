@@ -14,7 +14,8 @@ export interface Job {
 export enum UserType {
   SEEKER = 'SEEKER',
   EMPLOYER = 'EMPLOYER',
-  HOME = 'HOME'
+  HOME = 'HOME',
+  LACKIERJOBS = 'LACKIERJOBS'
 }
 
 export interface AIGeneratedJobContent {

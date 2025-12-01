@@ -1,6 +1,6 @@
 import React from 'react';
 import { UserType } from '../types';
-import { SprayCan, Briefcase, Users, Menu, X } from 'lucide-react';
+import { SprayCan, Briefcase, Users, Menu, X, Palette } from 'lucide-react';
 
 interface NavbarProps {
   currentPage: UserType;
@@ -13,6 +13,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
   const navItems = [
     { label: 'Startseite', page: UserType.HOME, icon: <SprayCan size={16} /> },
     { label: 'Jobs finden', page: UserType.SEEKER, icon: <Briefcase size={16} /> },
+    { label: 'Lackierstellen', page: UserType.LACKIERJOBS, icon: <Palette size={16} /> },
     { label: 'Arbeitgeber', page: UserType.EMPLOYER, icon: <Users size={16} /> },
   ];
 
