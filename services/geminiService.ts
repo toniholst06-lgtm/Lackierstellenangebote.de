@@ -2,12 +2,21 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { AIGeneratedJobContent } from '../types';
 
 const getAiClient = () => {
-  const apiKey = process.env.API_KEY;
-  if (!apiKey) {
-    console.warn("API_KEY not found in environment variables.");
+  try {
+    // Defensive check to prevent crash if process is undefined
+    if (typeof process === 'undefined' || !process.env) {
+        return null;
+    }
+    const apiKey = process.env.API_KEY;
+    if (!apiKey) {
+      console.warn("API_KEY not found in environment variables.");
+      return null;
+    }
+    return new GoogleGenAI({ apiKey });
+  } catch (e) {
+    console.warn("Environment access failed", e);
     return null;
   }
-  return new GoogleGenAI({ apiKey });
 };
 
 export const generateJobDescription = async (

@@ -7,6 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
+      // CRITICAL FIX: Polyfill process.env to prevent ReferenceError crashes in browser
+      window.process = window.process || { env: { API_KEY: '' } };
+
       tailwind.config = {
         theme: {
           extend: {
@@ -31,6 +34,9 @@
         background-color: #ffffff !important;
         color: #111827;
         font-family: 'Open Sans', sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
       }
       #root {
         min-height: 100%;
@@ -40,6 +46,11 @@
       }
       h1, h2, h3, h4, h5, h6 {
         font-family: 'Montserrat', sans-serif;
+      }
+      /* Ensure visibility */
+      .visible-force {
+        opacity: 1 !important;
+        visibility: visible !important;
       }
       /* Smooth Scroll */
       html {

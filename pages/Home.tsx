@@ -10,13 +10,13 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   return (
     <div className="bg-white text-gray-900 font-sans w-full">
       
-      {/* Light Hero Section - Split Layout */}
+      {/* Light Hero Section - Split Layout - ANIMATIONS REMOVED FOR STABILITY */}
       <div className="relative bg-white pt-16 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 
                 {/* Text Content */}
-                <div className="z-10 animate-in fade-in slide-in-from-left-8 duration-700">
+                <div className="z-10">
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-50 border border-red-100 rounded-full text-accent-primary text-xs font-bold uppercase tracking-widest mb-6">
                         <span className="w-2 h-2 rounded-full bg-accent-primary animate-pulse"></span> Die Nr. 1 für Lackierer
                     </div>
@@ -54,7 +54,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 </div>
 
                 {/* Image Content */}
-                <div className="relative h-[400px] lg:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl animate-in fade-in slide-in-from-right-8 duration-1000 delay-200 group">
+                <div className="relative h-[400px] lg:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl group">
                     <div className="absolute inset-0 bg-gradient-to-tr from-accent-primary/20 to-transparent z-10 pointer-events-none"></div>
                     <img 
                         src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=2000&auto=format&fit=crop" 
