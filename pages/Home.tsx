@@ -57,8 +57,8 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 <div className="relative h-[400px] lg:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl group">
                     <div className="absolute inset-0 bg-gradient-to-tr from-accent-primary/20 to-transparent z-10 pointer-events-none"></div>
                     <img 
-                        src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=2000&auto=format&fit=crop&v=2" 
-                        alt="Professioneller Fahrzeuglackierer" 
+                        src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=2000&q=85&v=10" 
+                        alt="Abgeklebtes Fahrzeug im Lackierstand" 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     
@@ -109,7 +109,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {/* Item 1 - Werkstatt Situation / Polieren */}
                 <div className="relative group overflow-hidden h-[300px] rounded-xl cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2000&auto=format&fit=crop&v=3" alt="Fahrzeug im Lackierstand" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src="https://images.unsplash.com/photo-1575024357670-2b5164f470c3?auto=format&fit=crop&w=2000&q=85&v=10" alt="Lackierer mit Spritzpistole" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                         <div>
                             <h3 className="text-xl font-display font-bold text-white uppercase mb-1">Finish & Polish</h3>
@@ -118,7 +118,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 </div>
                 {/* Item 2 - Auto fertig lackiert / Glanz */}
                 <div className="relative group overflow-hidden h-[300px] rounded-xl cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1600661653561-629509216228?q=80&w=2000&auto=format&fit=crop&v=2" alt="Schleifen vor der Lackierung" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src="https://images.unsplash.com/photo-1600661653561-629509216228?auto=format&fit=crop&w=2000&q=85&v=10" alt="Schleifen vor der Lackierung" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                         <div>
                             <h3 className="text-xl font-display font-bold text-white uppercase mb-1">Karosserie</h3>
@@ -127,7 +127,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 </div>
                 {/* Item 3 - Farbmischbank */}
                 <div className="relative group overflow-hidden h-[300px] rounded-xl cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2000&auto=format&fit=crop&v=2" alt="Farbmischbank Lackdosen" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=2000&q=85&v=10" alt="Farbmischbank Lackdosen" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                         <div>
                             <h3 className="text-xl font-display font-bold text-white uppercase mb-1">Coloristik</h3>
@@ -136,7 +136,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 </div>
                 {/* Item 4 - Close Up Pistole */}
                 <div className="relative group overflow-hidden h-[300px] rounded-xl cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1575024357670-2b5164f470c3?q=80&w=2000&auto=format&fit=crop&v=2" alt="Lackierpistole Nahaufnahme" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src="https://images.unsplash.com/photo-1575024357670-2b5164f470c3?auto=format&fit=crop&w=2000&q=85&v=11" alt="Lackierpistole Nahaufnahme" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                         <div>
                             <h3 className="text-xl font-display font-bold text-white uppercase mb-1">Applikation</h3>
@@ -171,8 +171,8 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                  
                  {/* ZUSÄTZLICHES BILD: Mischraum / Farbe */}
                     <img 
-                        src="https://images.unsplash.com/photo-1575024357670-2b5164f470c3?q=80&w=2000&auto=format&fit=crop&v=3" 
-                        alt="Spritzpistole in Lackierkabine" 
+                        src="https://images.unsplash.com/photo-1600661653561-629509216228?auto=format&fit=crop&w=2000&q=85&v=12" 
+                        alt="Schleifen und Vorbereitung vor dem Lackieren" 
                         className="w-full h-64 object-cover rounded-lg border border-gray-100 my-8 shadow-md transition-all"
                  />
 
@@ -193,8 +193,8 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                     <div className="relative group">
                         <div className="absolute -inset-1 bg-gradient-to-r from-accent-primary to-gray-200 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                         <img 
-                        src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2000&auto=format&fit=crop&v=3" 
-                        alt="Fahrzeug im Lackierstand abgeklebt" 
+                        src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=2000&q=85&v=10" 
+                        alt="Fahrzeugvorbereitung mit Poliermaschine" 
                         className="relative w-full rounded-lg shadow-xl mb-4 border border-gray-100"
                         />
                     </div>
@@ -225,23 +225,23 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
                 <div className="grid gap-6">
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1575024357670-2b5164f470c3?q=80&w=800&auto=format&fit=crop&v=3" alt="Spritzpistole Action" />
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800&auto=format&fit=crop&v=3" alt="Abgeklebtes Fahrzeug im Lackierstand" />
+                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1575024357670-2b5164f470c3?auto=format&fit=crop&w=800&q=85&v=15" alt="Spritzpistole Action" />
+                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=800&q=85&v=15" alt="Finish Polieren nach Lackierung" />
                 </div>
                 <div className="grid gap-6">
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1562259926-4b31a297e68c?q=80&w=800&auto=format&fit=crop&v=2" alt="Lackdosen Regal" />
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=800&auto=format&fit=crop&v=2" alt="Maler in Kabine" />
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1600661653561-629509216228?q=80&w=800&auto=format&fit=crop&v=2" alt="Schleifen Handarbeit" />
+                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=85&v=15" alt="Lackdosen Regal" />
+                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1575024357670-2b5164f470c3?auto=format&fit=crop&w=800&q=85&v=16" alt="Maler in Kabine" />
+                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1600661653561-629509216228?auto=format&fit=crop&w=800&q=85&v=15" alt="Schleifen Handarbeit" />
                 </div>
                 <div className="grid gap-6">
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=800&auto=format&fit=crop&v=3" alt="Farbmischbank Lackdosen" />
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1575024357670-2b5164f470c3?q=80&w=800&auto=format&fit=crop&v=3" alt="Lackierpistole Nahaufnahme" />
+                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=85&v=16" alt="Farbmischbank Lackdosen" />
+                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1575024357670-2b5164f470c3?auto=format&fit=crop&w=800&q=85&v=17" alt="Lackierpistole Nahaufnahme" />
                 </div>
             </div>
        </div>
 
       {/* Visual Break / Quote - Background: Clean Workshop */}
-      <div className="py-24 relative bg-fixed bg-center bg-cover border-y border-gray-200" style={{backgroundImage: "url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2000&auto=format&fit=crop&v=3')"}}>
+      <div className="py-24 relative bg-fixed bg-center bg-cover border-y border-gray-200" style={{backgroundImage: "url('https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=2000&q=85&v=18')"}}>
         <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]"></div>
         <div className="absolute inset-0 bg-gray-900/60"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
