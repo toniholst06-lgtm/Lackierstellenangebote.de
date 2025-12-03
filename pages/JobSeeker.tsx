@@ -24,9 +24,9 @@ export const JobSeeker = () => {
       <div className="relative py-24 px-4 overflow-hidden border-b border-gray-200 bg-gray-900">
         <div className="absolute inset-0">
             <img 
-                src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=2000&q=85&v=20" 
+                src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=2000&q=85&v=40" 
                 className="w-full h-full object-cover opacity-40" 
-                alt="Lackierkabine Hintergrund" 
+                alt="Maler streicht eine Wand" 
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-gray-900/90"></div>
         </div>
