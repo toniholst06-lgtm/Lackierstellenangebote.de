@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { MOCK_JOBS } from '../services/mockData';
 import { JobCard } from '../components/JobCard';
 import { Job } from '../types';
@@ -24,7 +24,7 @@ export const JobSeeker = () => {
       <div className="relative py-24 px-4 overflow-hidden border-b border-gray-200 bg-gray-900">
         <div className="absolute inset-0">
             <img 
-                src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=2000&q=85&v=40" 
+                src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=2000&q=85&v=999" 
                 className="w-full h-full object-cover opacity-40" 
                 alt="Maler streicht eine Wand" 
             />
@@ -36,7 +36,7 @@ export const JobSeeker = () => {
                 Finde deinen <span className="text-accent-primary">Traumjob</span>
             </h2>
             <p className="text-gray-300 max-w-2xl mx-auto mb-12 text-lg font-light">
-                Täglich neue Stellenangebote aus der Lackier- und Karosseriebranche.
+                TÃ¤glich neue Stellenangebote aus der Lackier- und Karosseriebranche.
             </p>
             
             <div className="flex flex-col md:flex-row gap-4 max-w-4xl mx-auto bg-white p-4 rounded-xl border border-gray-200 shadow-xl">
@@ -96,7 +96,7 @@ export const JobSeeker = () => {
                 onClick={() => {setSearchTerm(''); setLocationTerm('');}}
                 className="mt-4 text-accent-primary font-bold hover:underline"
               >
-                Filter zurücksetzen
+                Filter zurÃ¼cksetzen
               </button>
             </div>
           )}
@@ -155,7 +155,7 @@ export const JobSeeker = () => {
                  
                  <div className="md:col-span-1">
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 sticky top-0 shadow-sm">
-                        <h5 className="font-bold text-gray-900 uppercase mb-6 text-sm tracking-wider border-b border-gray-200 pb-2">Übersicht</h5>
+                        <h5 className="font-bold text-gray-900 uppercase mb-6 text-sm tracking-wider border-b border-gray-200 pb-2">Ãœbersicht</h5>
                         
                         <div className="mb-6">
                             <span className="block text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">Gehaltsrahmen</span>
@@ -164,7 +164,7 @@ export const JobSeeker = () => {
                         
                         <div className="mb-8">
                             <span className="block text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">Startdatum</span>
-                            <span className="text-gray-900 font-medium">Ab sofort möglich</span>
+                            <span className="text-gray-900 font-medium">Ab sofort mÃ¶glich</span>
                         </div>
 
                         <button className="w-full bg-accent-primary text-white font-bold uppercase tracking-widest py-4 rounded-lg hover:bg-accent-hover transition-colors mb-3 shadow-lg">
@@ -174,7 +174,7 @@ export const JobSeeker = () => {
                         onClick={() => setSelectedJob(null)}
                         className="w-full bg-transparent text-gray-500 font-bold uppercase tracking-widest py-3 hover:text-gray-900 transition-colors text-xs"
                         >
-                        Später ansehen
+                        SpÃ¤ter ansehen
                         </button>
                     </div>
                  </div>
@@ -187,3 +187,4 @@ export const JobSeeker = () => {
     </div>
   );
 };
+

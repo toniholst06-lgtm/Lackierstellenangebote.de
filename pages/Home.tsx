@@ -57,7 +57,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 <div className="relative h-[400px] lg:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl group">
                     <div className="absolute inset-0 bg-gradient-to-tr from-accent-primary/20 to-transparent z-10 pointer-events-none"></div>
                     <img 
-                        src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=2000&q=85&v=30" 
+                        src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=2000&q=85&v=999" 
                         alt="Malerin streicht eine Innenwand" 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -109,7 +109,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {/* Item 1 - Werkstatt Situation / Polieren */}
                 <div className="relative group overflow-hidden h-[300px] rounded-xl cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=2000&q=85&v=30" alt="Farbrolle auf frisch grundierter Wand" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=2000&q=85&v=999" alt="Farbrolle auf frisch grundierter Wand" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                         <div>
                             <h3 className="text-xl font-display font-bold text-white uppercase mb-1">Finish & Polish</h3>
@@ -118,7 +118,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 </div>
                 {/* Item 2 - Auto fertig lackiert / Glanz */}
                 <div className="relative group overflow-hidden h-[300px] rounded-xl cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=2000&q=85&v=30" alt="Pinsel mit frischer Wandfarbe" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=2000&q=85&v=999" alt="Pinsel mit frischer Wandfarbe" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                         <div>
                             <h3 className="text-xl font-display font-bold text-white uppercase mb-1">Karosserie</h3>
@@ -127,7 +127,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 </div>
                 {/* Item 3 - Farbmischbank */}
                 <div className="relative group overflow-hidden h-[300px] rounded-xl cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1486365227551-f3f90034a57c?auto=format&fit=crop&w=2000&q=85&v=30" alt="Farbfaecher und Farbeimer" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src="https://images.unsplash.com/photo-1486365227551-f3f90034a57c?auto=format&fit=crop&w=2000&q=85&v=999" alt="Farbfaecher und Farbeimer" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                         <div>
                             <h3 className="text-xl font-display font-bold text-white uppercase mb-1">Coloristik</h3>
@@ -136,7 +136,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 </div>
                 {/* Item 4 - Close Up Pistole */}
                 <div className="relative group overflow-hidden h-[300px] rounded-xl cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=2000&q=85&v=31" alt="Farbroller Nahaufnahme" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=2000&q=85&v=999" alt="Farbroller Nahaufnahme" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                         <div>
                             <h3 className="text-xl font-display font-bold text-white uppercase mb-1">Applikation</h3>
@@ -171,7 +171,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                  
                  {/* ZUSÃ„TZLICHES BILD: Mischraum / Farbe */}
                     <img 
-                        src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=2000&q=85&v=31" 
+                        src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=2000&q=85&v=999" 
                         alt="Vorbereitung und Abkleben vor dem Streichen" 
                         className="w-full h-64 object-cover rounded-lg border border-gray-100 my-8 shadow-md transition-all"
                  />
@@ -193,7 +193,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                     <div className="relative group">
                         <div className="absolute -inset-1 bg-gradient-to-r from-accent-primary to-gray-200 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                         <img 
-                        src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=85&v=30" 
+                        src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=85&v=999" 
                         alt="Feinschliff und Vorbereitung im Innenraum" 
                         className="relative w-full rounded-lg shadow-xl mb-4 border border-gray-100"
                         />
@@ -225,23 +225,23 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
                 <div className="grid gap-6">
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=800&q=85&v=30" alt="Farbrolle im Einsatz" />
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=85&v=30" alt="Innenraum fuer Anstrich vorbereitet" />
+                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=800&q=85&v=999" alt="Farbrolle im Einsatz" />
+                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=85&v=999" alt="Innenraum fuer Anstrich vorbereitet" />
                 </div>
                 <div className="grid gap-6">
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1486365227551-f3f90034a57c?auto=format&fit=crop&w=800&q=85&v=30" alt="Farbtoene und Materialien" />
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=800&q=85&v=31" alt="Innenwand Abklebearbeiten" />
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=85&v=30" alt="Feinschliff am Untergrund" />
+                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1486365227551-f3f90034a57c?auto=format&fit=crop&w=800&q=85&v=999" alt="Farbtoene und Materialien" />
+                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=800&q=85&v=999" alt="Innenwand Abklebearbeiten" />
+                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=85&v=999" alt="Feinschliff am Untergrund" />
                 </div>
                 <div className="grid gap-6">
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1486365227551-f3f90034a57c?auto=format&fit=crop&w=800&q=85&v=31" alt="Farbfaecher und Werkstatt" />
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=800&q=85&v=32" alt="Detailaufnahme Farbrolle" />
+                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1486365227551-f3f90034a57c?auto=format&fit=crop&w=800&q=85&v=999" alt="Farbfaecher und Werkstatt" />
+                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=800&q=85&v=999" alt="Detailaufnahme Farbrolle" />
                 </div>
             </div>
        </div>
 
       {/* Visual Break / Quote - Background: Clean Workshop */}
-      <div className="py-24 relative bg-fixed bg-center bg-cover border-y border-gray-200" style={{backgroundImage: "url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=85&v=31')"}}>
+      <div className="py-24 relative bg-fixed bg-center bg-cover border-y border-gray-200" style={{backgroundImage: "url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=85&v=999')"}}>
         <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]"></div>
         <div className="absolute inset-0 bg-gray-900/60"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
@@ -289,4 +289,5 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
     </div>
   );
 };
+
 
