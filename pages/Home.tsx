@@ -17,7 +17,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 
                 {/* Text Content */}
                 <div className="z-10">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-50 border border-indigo-100 rounded-full text-accent-primary text-xs font-bold uppercase tracking-widest mb-6">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-50 border border-amber-200 rounded-full text-accent-primary text-xs font-bold uppercase tracking-widest mb-6">
                         <span className="w-2 h-2 rounded-full bg-accent-primary animate-pulse"></span> Die Nr. 1 fÃ¼r Lackierer
                     </div>
                     <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-gray-900 mb-6 uppercase leading-none tracking-tight">
@@ -31,7 +31,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                     <div className="mt-10 flex flex-col sm:flex-row gap-4">
                         <button
                             onClick={() => onNavigate(UserType.SEEKER)}
-                            className="px-8 py-4 bg-accent-primary text-white font-display font-bold text-lg uppercase tracking-wider hover:bg-accent-hover transition-colors rounded-lg shadow-xl shadow-indigo-100"
+                            className="px-8 py-4 bg-accent-primary text-white font-display font-bold text-lg uppercase tracking-wider hover:bg-accent-hover transition-colors rounded-lg shadow-xl shadow-amber-100"
                         >
                             Jobs finden
                         </button>
