@@ -18,23 +18,23 @@ export const Footer = () => {
                     <span className="text-[10px] text-gray-400 uppercase tracking-widest">Stellenangebote.de</span>
                 </div>
             </div>
-            <p className="text-gray-500 text-sm leading-relaxed max-w-xs font-serif italic">
-              Exzellenz in der Vermittlung von Fachkräften für Oberflächentechnik.
+            <p className="text-gray-400 text-sm leading-relaxed max-w-xs font-serif">
+              Exzellenz in der Vermittlung von Fachkräften für Oberflächentechnik, Karosserie und Smart-Repair.
             </p>
           </div>
           
           <div>
             <h4 className="text-white font-display font-bold uppercase tracking-widest mb-6 text-sm">Für Bewerber</h4>
-            <ul className="space-y-3 text-sm text-gray-500">
+            <ul className="space-y-3 text-sm text-gray-400">
               <li><a href="#" className="hover:text-white transition-colors">Alle Stellenangebote</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Gehaltsvergleich</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Gehalt & Benefits</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Ausbildung</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-display font-bold uppercase tracking-widest mb-6 text-sm">Für Arbeitgeber</h4>
-            <ul className="space-y-3 text-sm text-gray-500">
+            <ul className="space-y-3 text-sm text-gray-400">
               <li><a href="#" className="hover:text-white transition-colors">Anzeige schalten</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Preise & Pakete</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Partner werden</a></li>
@@ -43,7 +43,7 @@ export const Footer = () => {
 
           <div>
             <h4 className="text-white font-display font-bold uppercase tracking-widest mb-6 text-sm">Rechtliches</h4>
-            <ul className="space-y-3 text-sm text-gray-500">
+            <ul className="space-y-3 text-sm text-gray-400">
               <li><a href="#" className="hover:text-white transition-colors">Impressum</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Datenschutz</a></li>
               <li><a href="#" className="hover:text-white transition-colors">AGB</a></li>

@@ -7,8 +7,8 @@ export const MOCK_JOBS: Job[] = [
     company: 'AutoGlanz Studio München',
     location: 'München',
     type: 'Vollzeit',
-    salary: '3.800€ - 4.500€',
-    description: 'Wir suchen einen erfahrenen Lackierer für Sportwagen und Oldtimer. Höchste Präzision erforderlich.',
+    salary: '3.800 - 4.500 EUR',
+    description: 'Wir suchen einen erfahrenen Lackierer für Sportwagen und Oldtimer. Höchste Präzision und Kabinenroutine erforderlich.',
     tags: ['Lackierung', 'Oldtimer', 'Finish'],
     postedDate: '2024-05-20',
     isPromoted: true
@@ -31,7 +31,7 @@ export const MOCK_JOBS: Job[] = [
     company: 'Karosserie & Lack Center',
     location: 'Berlin',
     type: 'Vollzeit',
-    salary: '5.200€+',
+    salary: '5.200 EUR+',
     description: 'Führung unseres Lack-Teams (10 Mitarbeiter). Qualitätskontrolle und Kundenannahme.',
     tags: ['Meister', 'Führung', 'Management'],
     postedDate: '2024-05-22',
@@ -39,7 +39,7 @@ export const MOCK_JOBS: Job[] = [
   },
   {
     id: '4',
-    title: 'Ausbildung zum Fahrzeuglackierer 2024',
+    title: 'Ausbildung zum Fahrzeuglackierer 2025',
     company: 'ColorWorks',
     location: 'Köln',
     type: 'Ausbildung',

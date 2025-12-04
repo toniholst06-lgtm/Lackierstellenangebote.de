@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { MOCK_JOBS } from '../services/mockData';
 import { JobCard } from '../components/JobCard';
 import { Job } from '../types';
@@ -9,9 +9,8 @@ export const JobSeeker = () => {
   const [locationTerm, setLocationTerm] = useState('');
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
 
-  // Filter Logic
   const filteredJobs = MOCK_JOBS.filter(job => {
-    const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           job.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
     const matchesLocation = job.location.toLowerCase().includes(locationTerm.toLowerCase());
     return matchesSearch && matchesLocation;
@@ -19,34 +18,35 @@ export const JobSeeker = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-gray-900">
-      
-      {/* Header Image Background - Workshop / Garage */}
-      <div className="relative py-24 px-4 overflow-hidden border-b border-gray-200 bg-gray-900">
+      <div className="relative py-24 px-4 overflow-hidden border-b border-gray-200 bg-gradient-to-br from-gray-900 via-gray-950 to-black text-white">
         <div className="absolute inset-0">
             <img 
-                src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=2000&q=85&v=999" 
-                className="w-full h-full object-cover opacity-40" 
-                alt="Maler streicht eine Wand" 
+                src="https://images.pexels.com/photos/4489732/pexels-photo-4489732.jpeg?auto=compress&cs=tinysrgb&w=2000&h=1400&dpr=1" 
+                className="w-full h-full object-cover opacity-35" 
+                alt="Lackierer sprüht Fahrzeug"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-gray-900/90"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/70 to-gray-900/90"></div>
         </div>
         
-        <div className="relative max-w-7xl mx-auto z-10 text-center">
-            <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-6 uppercase tracking-tight shadow-sm">
-                Finde deinen <span className="text-accent-primary">Traumjob</span>
+        <div className="relative max-w-7xl mx-auto z-10 text-center space-y-6">
+            <p className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
+              Sofort verfügbar • Kabine • Smart-Repair
+            </p>
+            <h2 className="text-4xl md:text-6xl font-display font-black text-white uppercase tracking-tight shadow-sm">
+                Finde deinen <span className="text-accent-primary">Lackierjob</span>
             </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto mb-12 text-lg font-light">
-                TÃ¤glich neue Stellenangebote aus der Lackier- und Karosseriebranche.
+            <p className="text-gray-200 max-w-2xl mx-auto mb-6 text-lg font-light">
+                Täglich neue Stellenangebote aus Lackierung, Vorbereitung, Mischraum und Smart-Repair. Mit klaren Prozessen und fairen Konditionen.
             </p>
             
-            <div className="flex flex-col md:flex-row gap-4 max-w-4xl mx-auto bg-white p-4 rounded-xl border border-gray-200 shadow-xl">
+            <div className="flex flex-col md:flex-row gap-4 max-w-4xl mx-auto bg-white p-4 rounded-xl border border-gray-200 shadow-2xl">
                 <div className="flex-1 relative group">
                     <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-accent-primary">
                         <Search size={20} />
                     </div>
                     <input 
                     type="text" 
-                    placeholder="Jobtitel, Begriff (z.B. Meister)" 
+                    placeholder="Jobtitel oder Technik (z.B. Wasserlack, Smart-Repair)" 
                     className="w-full bg-gray-50 border border-gray-200 rounded-lg py-4 pl-12 pr-4 text-gray-900 focus:outline-none focus:border-accent-primary transition-all placeholder-gray-400 font-medium focus:bg-white"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
@@ -71,16 +71,15 @@ export const JobSeeker = () => {
         </div>
       </div>
 
-      {/* Results Grid */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="flex justify-between items-center mb-8">
-            <span className="text-gray-500 font-medium flex items-center">
-                <Briefcase size={16} className="mr-2" />
+            <span className="text-gray-600 font-medium flex items-center">
+                <Briefcase size={16} className="mr-2 text-accent-primary" />
                 {filteredJobs.length} Stellenangebote
             </span>
             <div className="flex gap-6 text-sm">
                 <span className="font-bold uppercase tracking-wider text-accent-primary border-b-2 border-accent-primary cursor-pointer pb-1">Aktuellste</span>
-                <span className="font-bold uppercase tracking-wider text-gray-500 hover:text-gray-900 cursor-pointer transition-colors pb-1">Gehalt</span>
+                <span className="font-bold uppercase tracking-wider text-gray-400 hover:text-gray-900 cursor-pointer transition-colors pb-1">Gehalt</span>
             </div>
         </div>
 
@@ -96,19 +95,17 @@ export const JobSeeker = () => {
                 onClick={() => {setSearchTerm(''); setLocationTerm('');}}
                 className="mt-4 text-accent-primary font-bold hover:underline"
               >
-                Filter zurÃ¼cksetzen
+                Filter zurücksetzen
               </button>
             </div>
           )}
         </div>
       </div>
 
-      {/* Job Detail Modal */}
       {selectedJob && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
           <div className="bg-white w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col animate-in fade-in zoom-in-95 duration-200">
             
-            {/* Modal Header */}
             <div className="relative bg-white p-8 border-b border-gray-100 flex-shrink-0">
               <button 
                 onClick={() => setSelectedJob(null)}
@@ -125,7 +122,6 @@ export const JobSeeker = () => {
               </div>
             </div>
 
-            {/* Modal Content */}
             <div className="p-8 md:p-10 overflow-y-auto bg-white">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                  <div className="md:col-span-2 space-y-8">
@@ -134,7 +130,7 @@ export const JobSeeker = () => {
                             <span className="w-1 h-6 bg-accent-primary mr-3 rounded-full"></span> 
                             Deine Aufgaben
                         </h4>
-                        <p className="text-gray-600 leading-relaxed text-base font-normal">{selectedJob.description}</p>
+                        <p className="text-gray-700 leading-relaxed text-base font-normal">{selectedJob.description}</p>
                     </div>
                     
                     <div>
@@ -143,7 +139,7 @@ export const JobSeeker = () => {
                              Das bringst du mit
                         </h4>
                         <ul className="grid grid-cols-1 gap-3">
-                            {selectedJob.tags.map(t => (
+                            {selectedJob.tags.map((t) => (
                                 <li key={t} className="flex items-center text-gray-700 bg-gray-50 p-3 rounded border border-gray-100">
                                     <div className="w-2 h-2 bg-accent-primary rounded-full mr-3"></div>
                                     {t}
@@ -155,7 +151,7 @@ export const JobSeeker = () => {
                  
                  <div className="md:col-span-1">
                     <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 sticky top-0 shadow-sm">
-                        <h5 className="font-bold text-gray-900 uppercase mb-6 text-sm tracking-wider border-b border-gray-200 pb-2">Ãœbersicht</h5>
+                        <h5 className="font-bold text-gray-900 uppercase mb-6 text-sm tracking-wider border-b border-gray-200 pb-2">Übersicht</h5>
                         
                         <div className="mb-6">
                             <span className="block text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">Gehaltsrahmen</span>
@@ -164,7 +160,7 @@ export const JobSeeker = () => {
                         
                         <div className="mb-8">
                             <span className="block text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">Startdatum</span>
-                            <span className="text-gray-900 font-medium">Ab sofort mÃ¶glich</span>
+                            <span className="text-gray-900 font-medium">Ab sofort möglich</span>
                         </div>
 
                         <button className="w-full bg-accent-primary text-white font-bold uppercase tracking-widest py-4 rounded-lg hover:bg-accent-hover transition-colors mb-3 shadow-lg">
@@ -174,7 +170,7 @@ export const JobSeeker = () => {
                         onClick={() => setSelectedJob(null)}
                         className="w-full bg-transparent text-gray-500 font-bold uppercase tracking-widest py-3 hover:text-gray-900 transition-colors text-xs"
                         >
-                        SpÃ¤ter ansehen
+                        Später ansehen
                         </button>
                     </div>
                  </div>

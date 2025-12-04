@@ -17,21 +17,20 @@ export const Employer = () => {
 
   const handleGenerate = async () => {
     if (!formData.jobTitle || !formData.companyName) {
-      setError("Bitte füllen Sie alle Pflichtfelder aus.");
+      setError('Bitte füllen Sie alle Pflichtfelder aus.');
       return;
     }
 
     setIsGenerating(true);
     setError(null);
 
-    // Simulate API / Fallback if key missing
     if (!process.env.API_KEY && !generatedContent) {
         setTimeout(() => {
             setGeneratedContent({
                 title: formData.jobTitle,
                 description: `Für unseren renommierten Fachbetrieb ${formData.companyName} suchen wir Verstärkung. Wir stehen für Qualität und Langlebigkeit in der Oberflächentechnik. Wenn Sie Leidenschaft für Lack und Farbe mitbringen, sind Sie bei uns richtig.`,
-                requirements: ["Abgeschlossene Berufsausbildung", "Sorgfältige Arbeitsweise", "Teamfähigkeit", ...formData.keywords.split(',')],
-                benefits: ["Faire Bezahlung", "Modernes Equipment", "Weiterbildungsmöglichkeiten"]
+                requirements: ['Abgeschlossene Berufsausbildung', 'Sorgfältige Arbeitsweise', 'Teamfähigkeit', ...formData.keywords.split(',').map((k) => k.trim()).filter(Boolean)],
+                benefits: ['Faire Bezahlung', 'Modernes Equipment', 'Weiterbildungsmöglichkeiten']
             });
             setIsGenerating(false);
             setStep(2);
@@ -46,13 +45,13 @@ export const Employer = () => {
       setGeneratedContent(content);
       setStep(2);
     } else {
-      setError("Der KI-Service ist derzeit nicht erreichbar.");
+      setError('Der KI-Service ist derzeit nicht erreichbar.');
     }
   };
 
   const handlePublish = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Vielen Dank! Ihre Anzeige wurde zur Prüfung eingereicht.");
+    alert('Vielen Dank! Ihre Anzeige wurde zur Prüfung eingereicht.');
     setStep(1);
     setFormData({ companyName: '', jobTitle: '', keywords: '', email: '' });
     setGeneratedContent(null);
@@ -60,20 +59,21 @@ export const Employer = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-gray-900">
-        
-        {/* Header with Background - Dark for contrast */}
-        <div className="relative border-b border-gray-200 py-24 px-4 text-center overflow-hidden bg-gray-900">
+        <div className="relative border-b border-gray-200 py-24 px-4 text-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-950 to-black">
              <div className="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1599813009696-857c50e28f32?q=80&w=2000&auto=format&fit=crop" className="w-full h-full object-cover opacity-40" alt="Werkstatt Background" />
+                <img src="https://images.pexels.com/photos/4489732/pexels-photo-4489732.jpeg?auto=compress&cs=tinysrgb&w=2000&h=1400&dpr=1" className="w-full h-full object-cover opacity-30" alt="Werkstatt Background" />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent"></div>
              </div>
              
-             <div className="relative z-10">
-                <h1 className="text-3xl md:text-5xl font-display font-black text-white uppercase mb-4 shadow-sm">
+             <div className="relative z-10 space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs font-bold uppercase tracking-[0.2em] text-white">
+                  <Sparkles size={14} className="text-accent-primary" /> Anzeige in Minuten
+                </div>
+                <h1 className="text-3xl md:text-5xl font-display font-black text-white uppercase mb-2 shadow-sm">
                     Mitarbeiter <span className="text-accent-primary">finden</span>
                 </h1>
-                <p className="text-gray-300 max-w-xl mx-auto text-lg font-light">
-                    Erstellen Sie in wenigen Minuten eine professionelle Stellenanzeige mit Hilfe unserer KI.
+                <p className="text-gray-200 max-w-xl mx-auto text-lg font-light">
+                    Erstellen Sie in wenigen Minuten eine professionelle Stellenanzeige mit Hilfe unserer KI – optimiert für Lackierer, Vorbereiter und Smart-Repair.
                 </p>
              </div>
         </div>
@@ -82,7 +82,6 @@ export const Employer = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
-            {/* Sidebar Info */}
             <div className="lg:col-span-4">
                 <div className="bg-white rounded-xl border border-gray-200 p-8 sticky top-32 shadow-xl">
                     <div className="flex items-center mb-8">
@@ -119,7 +118,7 @@ export const Employer = () => {
                     <div className="pt-8 border-t border-gray-100">
                         <div className="flex items-end justify-between mb-2">
                              <span className="text-gray-500 text-sm">Einzelanzeige</span>
-                             <span className="text-2xl font-black text-gray-900">49 €</span>
+                             <span className="text-2xl font-black text-gray-900">49 EUR</span>
                         </div>
                         <p className="text-xs text-gray-400 text-right mb-6">zzgl. gesetzl. MwSt. / 30 Tage Laufzeit</p>
                         <button className="w-full py-3 bg-gray-900 text-white font-bold text-sm uppercase rounded hover:bg-gray-800 transition-colors">
@@ -129,7 +128,6 @@ export const Employer = () => {
                 </div>
             </div>
 
-            {/* Main Form Area */}
             <div className="lg:col-span-8">
                 <div className="bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden">
                     <div className="h-2 w-full bg-gray-100 flex">
@@ -223,14 +221,14 @@ export const Employer = () => {
                                 <div className="absolute top-0 right-0 bg-gray-200 text-gray-500 text-[10px] font-bold uppercase px-2 py-1 rounded-bl">Vorschau</div>
                                 
                                 <h4 className="text-2xl font-display font-black text-gray-900 mb-6 uppercase">{generatedContent.title}</h4>
-                                <p className="text-gray-600 mb-8 leading-relaxed font-sans">{generatedContent.description}</p>
+                                <p className="text-gray-700 mb-8 leading-relaxed font-sans">{generatedContent.description}</p>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <div>
                                         <h5 className="font-bold text-gray-900 uppercase mb-4 text-xs tracking-widest border-b-2 border-accent-primary w-fit pb-1">Ihr Profil</h5>
                                         <ul className="space-y-3">
                                             {generatedContent.requirements.map((req, i) => (
-                                                <li key={i} className="flex items-start text-gray-600 text-sm font-medium">
+                                                <li key={i} className="flex items-start text-gray-700 text-sm font-medium">
                                                     <Check size={14} className="text-accent-primary mt-1 mr-3 flex-shrink-0" />
                                                     {req}
                                                 </li>
@@ -241,7 +239,7 @@ export const Employer = () => {
                                         <h5 className="font-bold text-gray-900 uppercase mb-4 text-xs tracking-widest border-b-2 border-accent-primary w-fit pb-1">Wir bieten</h5>
                                         <ul className="space-y-3">
                                             {generatedContent.benefits.map((ben, i) => (
-                                                <li key={i} className="flex items-start text-gray-600 text-sm font-medium">
+                                                <li key={i} className="flex items-start text-gray-700 text-sm font-medium">
                                                     <Check size={14} className="text-accent-primary mt-1 mr-3 flex-shrink-0" />
                                                     {ben}
                                                 </li>
@@ -251,17 +249,17 @@ export const Employer = () => {
                                 </div>
                             </div>
 
-                            <div className="bg-blue-50 border border-blue-100 rounded-lg p-6 mb-8">
-                                <label className="block text-xs font-bold text-blue-800 uppercase tracking-widest mb-3">E-Mail für Bewerbungen</label>
+                            <div className="bg-orange-50 border border-orange-100 rounded-lg p-6 mb-8">
+                                <label className="block text-xs font-bold text-orange-800 uppercase tracking-widest mb-3">E-Mail für Bewerbungen</label>
                                 <input 
                                     type="email" 
                                     required
-                                    className="w-full bg-white border border-blue-200 rounded p-4 text-gray-900 focus:border-blue-500 outline-none transition-colors"
+                                    className="w-full bg-white border border-orange-200 rounded p-4 text-gray-900 focus:border-orange-500 outline-none transition-colors"
                                     placeholder="bewerbung@ihrefirma.de"
                                     value={formData.email}
                                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                                 />
-                                <p className="text-xs text-blue-600 mt-2">An diese Adresse werden Bewerbungen weitergeleitet. Sie ist für Bewerber nicht öffentlich sichtbar.</p>
+                                <p className="text-xs text-orange-700 mt-2">An diese Adresse werden Bewerbungen weitergeleitet. Sie ist für Bewerber nicht öffentlich sichtbar.</p>
                             </div>
 
                             <button 
@@ -269,7 +267,7 @@ export const Employer = () => {
                                 className="w-full bg-accent-primary text-white font-bold font-display uppercase tracking-widest py-5 rounded-lg hover:bg-accent-hover transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center justify-center gap-3"
                             >
                                 <Save size={20} /> 
-                                <span>Kostenpflichtig Veröffentlichen</span>
+                                <span>Kostenpflichtig veröffentlichen</span>
                             </button>
                         </div>
                     )}
@@ -281,3 +279,4 @@ export const Employer = () => {
     </div>
   );
 };
+

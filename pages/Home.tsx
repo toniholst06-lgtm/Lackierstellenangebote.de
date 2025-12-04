@@ -1,6 +1,6 @@
-﻿import React from 'react';
+import React from 'react';
 import { UserType } from '../types';
-import { ArrowRight, Wrench, Layers, Star, PenTool } from 'lucide-react';
+import { ArrowRight, Wrench, Layers, Star, PenTool, ShieldCheck, Sparkles } from 'lucide-react';
 
 interface HomeProps {
   onNavigate: (page: UserType) => void;
@@ -9,285 +9,284 @@ interface HomeProps {
 export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   return (
     <div className="bg-white text-gray-900 font-sans w-full">
-      
-      {/* Light Hero Section - Split Layout - ANIMATIONS REMOVED FOR STABILITY */}
-      <div className="relative bg-white pt-16 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                
-                {/* Text Content */}
-                <div className="z-10">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-sky-50 border border-sky-100 rounded-full text-accent-primary text-xs font-bold uppercase tracking-widest mb-6">
-                        <span className="w-2 h-2 rounded-full bg-accent-primary animate-pulse"></span> Die Nr. 1 fÃ¼r Lackierer
-                    </div>
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-gray-900 mb-6 uppercase leading-none tracking-tight">
-                        PrÃ¤zision <br />
-                        <span className="text-accent-primary">trifft Job</span>
-                    </h1>
-                    <p className="mt-4 text-xl text-gray-600 font-light max-w-lg leading-relaxed">
-                        Die JobbÃ¶rse fÃ¼r Fahrzeuglackierer, Vorbereiter und Smart-Repair-Experten. Verbinde dich mit WerkstÃ¤tten, die dein Handwerk schÃ¤tzen.
-                    </p>
-
-                    <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                        <button
-                            onClick={() => onNavigate(UserType.SEEKER)}
-                            className="px-8 py-4 bg-accent-primary text-white font-display font-bold text-lg uppercase tracking-wider hover:bg-accent-hover transition-colors rounded-lg shadow-xl shadow-sky-100"
-                        >
-                            Jobs finden
-                        </button>
-
-                        <button
-                            onClick={() => onNavigate(UserType.EMPLOYER)}
-                            className="px-8 py-4 bg-white text-gray-900 border-2 border-gray-100 font-display font-bold text-lg uppercase tracking-wider hover:border-gray-300 hover:bg-gray-50 transition-all rounded-lg"
-                        >
-                            Stelle schalten
-                        </button>
-                    </div>
-                    
-                    <div className="mt-12 flex items-center gap-8 text-sm font-bold text-gray-400 uppercase tracking-widest">
-                        <span>500+ Jobs</span>
-                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span>Top GehÃ¤lter</span>
-                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                        <span>Direktbewerbung</span>
-                    </div>
-                </div>
-
-                {/* Image Content */}
-                <div className="relative h-[400px] lg:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl group">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-accent-primary/20 to-transparent z-10 pointer-events-none"></div>
-                    <img 
-                        src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=2000&q=85&v=999" 
-                        alt="Malerin streicht eine Innenwand" 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    
-                    {/* Floating Badge */}
-                    <div className="absolute bottom-8 left-8 z-20 bg-white/95 backdrop-blur shadow-lg p-4 rounded-lg max-w-xs border-l-4 border-accent-primary">
-                        <p className="text-gray-900 font-bold text-sm">"Endlich ein Portal, das unser Handwerk versteht."</p>
-                        <p className="text-gray-500 text-xs mt-1 uppercase tracking-wider">- Michael S., Lackiermeister</p>
-                    </div>
-                </div>
-
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-950 to-black text-white">
+        <div className="absolute inset-0 opacity-50 bg-[radial-gradient(circle_at_10%_20%,rgba(249,115,22,0.18),transparent_25%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.08),transparent_30%)]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-10 relative z-10">
+          <div className="lg:col-span-7 space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
+              <span className="w-2 h-2 rounded-full bg-accent-primary animate-pulse"></span>
+              Nr. 1 für Fahrzeuglackierer
             </div>
-        </div>
-      </div>
-
-      {/* Intro Stats Section */}
-      <div className="bg-gray-50 border-y border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 py-12">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-200">
-                <div>
-                    <span className="block text-4xl font-display font-black text-gray-900 mb-1">500+</span>
-                    <span className="text-xs text-gray-500 uppercase font-bold tracking-widest">Offene Stellen</span>
-                </div>
-                <div>
-                    <span className="block text-4xl font-display font-black text-gray-900 mb-1">1.2k</span>
-                    <span className="text-xs text-gray-500 uppercase font-bold tracking-widest">Lackierereien</span>
-                </div>
-                <div>
-                    <span className="block text-4xl font-display font-black text-gray-900 mb-1">Top</span>
-                    <span className="text-xs text-gray-500 uppercase font-bold tracking-widest">GehÃ¤lter</span>
-                </div>
-                <div>
-                    <span className="block text-4xl font-display font-black text-gray-900 mb-1">24h</span>
-                    <span className="text-xs text-gray-500 uppercase font-bold tracking-widest">Express Bewerbung</span>
-                </div>
+            <h1 className="text-4xl md:text-6xl font-display font-black leading-tight">
+              Präzision im Lackierhandwerk.
+              <span className="block text-accent-primary">Jobs, die glänzen.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed">
+              Lackierstellenangebote.de bringt Lackierer, Vorbereiter und Smart-Repair-Profis mit Betrieben zusammen, die moderne Kabinen, klare Prozesse und faire Bezahlung bieten.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button
+                onClick={() => onNavigate(UserType.SEEKER)}
+                className="px-8 py-4 bg-accent-primary text-white font-display font-bold text-lg uppercase tracking-wider hover:bg-accent-hover transition-colors rounded-lg shadow-2xl shadow-accent-primary/30"
+              >
+                Jobs finden
+              </button>
+              <button
+                onClick={() => onNavigate(UserType.EMPLOYER)}
+                className="px-8 py-4 bg-white/10 text-white border border-white/30 font-display font-bold text-lg uppercase tracking-wider hover:bg-white/20 transition-colors rounded-lg"
+              >
+                Stelle schalten
+              </button>
             </div>
-        </div>
-      </div>
-
-      {/* Real Workshop Grid Section */}
-      <div className="py-24 bg-white">
-         <div className="max-w-7xl mx-auto px-4 mb-16 text-center">
-            <span className="text-accent-primary font-bold uppercase tracking-widest mb-2 block">Einblicke</span>
-            <h2 className="text-4xl md:text-5xl font-display font-black text-gray-900 uppercase">
-                Dein <span className="text-accent-primary">Handwerk</span> im Fokus
-            </h2>
-         </div>
-         <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {/* Item 1 - Werkstatt Situation / Polieren */}
-                <div className="relative group overflow-hidden h-[300px] rounded-xl cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=2000&q=85&v=999" alt="Farbrolle auf frisch grundierter Wand" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
-                        <div>
-                            <h3 className="text-xl font-display font-bold text-white uppercase mb-1">Finish & Polish</h3>
-                        </div>
-                    </div>
-                </div>
-                {/* Item 2 - Auto fertig lackiert / Glanz */}
-                <div className="relative group overflow-hidden h-[300px] rounded-xl cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=2000&q=85&v=999" alt="Pinsel mit frischer Wandfarbe" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
-                        <div>
-                            <h3 className="text-xl font-display font-bold text-white uppercase mb-1">Karosserie</h3>
-                        </div>
-                    </div>
-                </div>
-                {/* Item 3 - Farbmischbank */}
-                <div className="relative group overflow-hidden h-[300px] rounded-xl cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1486365227551-f3f90034a57c?auto=format&fit=crop&w=2000&q=85&v=999" alt="Farbfaecher und Farbeimer" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
-                        <div>
-                            <h3 className="text-xl font-display font-bold text-white uppercase mb-1">Coloristik</h3>
-                        </div>
-                    </div>
-                </div>
-                {/* Item 4 - Close Up Pistole */}
-                <div className="relative group overflow-hidden h-[300px] rounded-xl cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=2000&q=85&v=999" alt="Farbroller Nahaufnahme" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
-                        <div>
-                            <h3 className="text-xl font-display font-bold text-white uppercase mb-1">Applikation</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-         </div>
-      </div>
-
-      {/* Massive Content Section */}
-      <div className="bg-gray-50 py-24 border-t border-gray-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="mb-20">
-            <span className="text-accent-primary font-bold uppercase tracking-widest mb-2 block">Karriere in der Werkstatt</span>
-            <h2 className="text-3xl md:text-5xl font-display font-black text-gray-900 mb-8 uppercase leading-tight">
-              Echtes Handwerk <br />zÃ¤hlt wieder
-            </h2>
-            <div className="w-24 h-2 bg-accent-primary mb-12"></div>
-            
-            <article className="prose prose-lg max-w-none text-gray-600 font-light">
-              <p className="lead text-xl text-gray-900 font-normal mb-10 border-l-4 border-accent-primary pl-6 py-2 bg-white rounded-r-lg shadow-sm">
-                Vom Abkleben bis zum Klarlack: Deine Arbeit ist das Erste, was der Kunde sieht. Wir bringen dich mit Betrieben zusammen, die saubere Arbeit und ZuverlÃ¤ssigkeit honorieren.
-              </p>
-
-              <div className="mb-16 bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
-                 <h3 className="text-2xl font-display font-bold text-gray-900 mb-6">Der Arbeitsplatz Lackierkabine</h3>
-                 <p className="mb-6 text-justify text-gray-600">
-                    Als Fahrzeuglackierer bist du der letzte Schritt in der Reparaturkette. Egal ob Unfallinstandsetzung oder Veredelung â€“ dein Ergebnis muss stehen. Moderne Betriebe setzen heute auf Wasserbasislacke, digitale Farbtonmessung und energieeffiziente Trocknungssysteme. Wir suchen Profis, die mit Spritzpistole, Schleifklotz und Exzenter umgehen kÃ¶nnen wie kein anderer.
-                 </p>
-                 
-                 {/* ZUSÃ„TZLICHES BILD: Mischraum / Farbe */}
-                    <img 
-                        src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=2000&q=85&v=999" 
-                        alt="Vorbereitung und Abkleben vor dem Streichen" 
-                        className="w-full h-64 object-cover rounded-lg border border-gray-100 my-8 shadow-md transition-all"
-                 />
-
-                 <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 my-8 flex gap-4 items-start">
-                    <div className="bg-white p-3 rounded-full text-accent-primary flex-shrink-0 shadow-sm border border-gray-100">
-                        <Wrench size={24} />
-                    </div>
-                    <div>
-                        <h4 className="font-bold text-gray-900 uppercase text-sm mb-1">Top Ausstattung</h4>
-                        <p className="text-sm text-gray-500">Unsere Partnerbetriebe investieren in modernes Equipment. Gute Absaugung, top Licht und Markenwerkzeug sind Standard.</p>
-                    </div>
-                 </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 text-sm text-gray-300">
+              <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+                <p className="text-2xl font-display font-black text-white">500+</p>
+                <p className="uppercase tracking-widest text-xs">Offene Stellen</p>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-center">
-                 <div className="order-2 md:order-1">
-                    {/* Bild: Vorbereitung / Abkleben */}
-                    <div className="relative group">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-accent-primary to-gray-200 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                        <img 
-                        src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=85&v=999" 
-                        alt="Feinschliff und Vorbereitung im Innenraum" 
-                        className="relative w-full rounded-lg shadow-xl mb-4 border border-gray-100"
-                        />
-                    </div>
-                     <span className="text-xs text-gray-400 uppercase font-bold tracking-widest flex items-center justify-center gap-2"><Layers size={12}/> Vorbereitung & Finish</span>
-                 </div>
-                 <div className="order-1 md:order-2">
-                    <h3 className="text-2xl font-display font-bold text-gray-900 mb-6">Industrie & Pulver</h3>
-                    <p className="mb-4 text-justify text-gray-600">
-                      Neben dem KFZ-Bereich bieten wir Stellen in der Industrielackierung. Hier geht es um Korrosionsschutz, Schichtdicken und GroÃŸserien. Pulverbeschichter sind extrem gefragt, besonders wenn Erfahrung mit Automatik-Anlagen oder Handbeschichtung vorliegt.
-                    </p>
-                    <p className="text-justify text-gray-600">
-                      Auch Smart-Repair Techniker finden bei uns ihren Platz. Die schnelle Reparatur von KleinschÃ¤den an StoÃŸstangen oder Felgen ist ein Wachstumsmarkt mit hervorragenden VerdienstmÃ¶glichkeiten fÃ¼r SelbststÃ¤ndige oder Angestellte im Autohaus.
-                    </p>
-                 </div>
+              <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+                <p className="text-2xl font-display font-black text-white">24h</p>
+                <p className="uppercase tracking-widest text-xs">Antwort im Schnitt</p>
               </div>
-            </article>
+              <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+                <p className="text-2xl font-display font-black text-white">Top</p>
+                <p className="uppercase tracking-widest text-xs">Gehalt & PSA</p>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-lg p-4">
+                <p className="text-2xl font-display font-black text-white">DE/AT</p>
+                <p className="uppercase tracking-widest text-xs">Bundesweit</p>
+              </div>
+            </div>
           </div>
 
+          <div className="lg:col-span-5">
+            <div className="relative h-[420px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-white/5 backdrop-blur">
+              <img
+                src="https://images.pexels.com/photos/4489732/pexels-photo-4489732.jpeg?auto=compress&cs=tinysrgb&w=2000&h=1400&dpr=1"
+                alt="Fahrzeug wird in der Kabine lackiert"
+                className="w-full h-full object-cover opacity-90"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 bg-white/90 text-gray-900 rounded-2xl p-5 shadow-xl border border-gray-100">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-accent-primary font-bold">Kabine ready</p>
+                    <p className="text-lg font-display font-black">Premium Finish</p>
+                    <p className="text-sm text-gray-600">Staubfrei, klarer Prozess, hochwertige PSA.</p>
+                  </div>
+                  <div className="bg-accent-primary/10 text-accent-primary px-3 py-2 rounded-lg text-xs font-bold uppercase tracking-widest">
+                    Smart Repair
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-       {/* NEW: Masonry Gallery Section for MORE IMAGES */}
-       <div className="bg-white py-24 border-t border-gray-200">
-            <div className="max-w-7xl mx-auto px-4 mb-12 text-center">
-                 <span className="text-accent-primary font-bold uppercase tracking-widest mb-2 block">Einblicke</span>
-                <h3 className="text-3xl md:text-5xl font-display font-black text-gray-900 uppercase">Impressionen aus der Werkstatt</h3>
+      <section className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-4 gap-6">
+          {[
+            { title: 'Moderne Kabinen', text: 'Werkstätten mit sauberer Luftführung und Lichtkonzepten.' },
+            { title: 'Klare Abläufe', text: 'Realistische Taktzeiten, kein Chaos zwischen Vorbereitung und Finish.' },
+            { title: 'Faire Konditionen', text: 'Transparente Gehaltsbänder, Überstundenregelungen, PSA gestellt.' },
+            { title: 'Direkter Draht', text: 'Bewerben ohne Umwege – Rückmeldung oft unter 24 Stunden.' },
+          ].map((item) => (
+            <div key={item.title} className="bg-gray-50 border border-gray-200 rounded-2xl p-6 shadow-sm">
+              <p className="text-xs uppercase tracking-[0.2em] text-accent-primary font-bold mb-2">{item.title}</p>
+              <p className="text-gray-700 leading-relaxed">{item.text}</p>
             </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
-                <div className="grid gap-6">
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=800&q=85&v=999" alt="Farbrolle im Einsatz" />
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=85&v=999" alt="Innenraum fuer Anstrich vorbereitet" />
-                </div>
-                <div className="grid gap-6">
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1486365227551-f3f90034a57c?auto=format&fit=crop&w=800&q=85&v=999" alt="Farbtoene und Materialien" />
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=800&q=85&v=999" alt="Innenwand Abklebearbeiten" />
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=85&v=999" alt="Feinschliff am Untergrund" />
-                </div>
-                <div className="grid gap-6">
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1486365227551-f3f90034a57c?auto=format&fit=crop&w=800&q=85&v=999" alt="Farbfaecher und Werkstatt" />
-                    <img className="h-auto max-w-full rounded-lg object-cover hover:shadow-xl transition-all border border-gray-100" src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=800&q=85&v=999" alt="Detailaufnahme Farbrolle" />
-                </div>
-            </div>
-       </div>
+          ))}
+        </div>
+      </section>
 
-      {/* Visual Break / Quote - Background: Clean Workshop */}
-      <div className="py-24 relative bg-fixed bg-center bg-cover border-y border-gray-200" style={{backgroundImage: "url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=85&v=999')"}}>
-        <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]"></div>
-        <div className="absolute inset-0 bg-gray-900/60"></div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-            <Star size={64} className="text-white mx-auto mb-8 drop-shadow-lg" />
-            <blockquote className="text-4xl md:text-5xl font-display font-black text-white uppercase leading-tight mb-8 drop-shadow-xl">
-                "Lackieren ist keine Arbeit. Es ist eine Haltung."
-            </blockquote>
-            <button onClick={() => onNavigate(UserType.SEEKER)} className="bg-white text-gray-900 font-bold uppercase py-4 px-10 rounded hover:bg-gray-100 transition-colors shadow-2xl">
-                Jetzt Karriere starten
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-5 space-y-4">
+            <span className="text-accent-primary font-bold uppercase tracking-[0.2em]">Werkstatt-Realität</span>
+            <h2 className="text-3xl md:text-4xl font-display font-black text-gray-900 leading-tight">
+              Lackieren, Vorbereiten, Smart-Repair. Alles an einem Ort.
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              Ob PKW, Nutzfahrzeug oder Industrie – wir zeigen dir Betriebe mit ordentlicher Ausstattung, klaren Rollen und echten Entwicklungspfaden.
+            </p>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-gray-800">
+                <ShieldCheck className="text-accent-primary" size={18} />
+                PSA, Absaugung und Licht werden gestellt und geprüft.
+              </div>
+              <div className="flex items-center gap-3 text-gray-800">
+                <Layers className="text-accent-primary" size={18} />
+                Klare Übergaben zwischen Vorbereitung, Lack und Finish.
+              </div>
+              <div className="flex items-center gap-3 text-gray-800">
+                <Sparkles className="text-accent-primary" size={18} />
+                Weiterbildung zu Farbtonmessung, Wasserbasis- und 2K-Systemen.
+              </div>
+            </div>
+            <button
+              onClick={() => onNavigate(UserType.LACKIERJOBS)}
+              className="mt-6 inline-flex items-center gap-3 text-accent-primary font-bold uppercase tracking-widest hover:text-accent-hover"
+            >
+              Lackierer-Stellen ansehen <ArrowRight size={16} />
             </button>
-        </div>
-      </div>
+          </div>
 
-      {/* FAQ Section */}
-      <div className="bg-gray-50 py-24 border-t border-gray-200">
+          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+            <div className="relative group overflow-hidden h-[360px] rounded-2xl shadow-lg">
+              <img
+                src="https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=2000&h=1400&dpr=1"
+                alt="Vorbereitung und Schleifen eines Stoßfängers"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <p className="text-xs uppercase tracking-[0.2em] text-accent-primary font-bold mb-1">Vorbereitung</p>
+                <p className="text-lg font-display font-black">Saubere Untergründe</p>
+              </div>
+            </div>
+
+            <div className="relative group overflow-hidden h-[360px] rounded-2xl shadow-lg">
+              <img
+                src="https://images.pexels.com/photos/3806268/pexels-photo-3806268.jpeg?auto=compress&cs=tinysrgb&w=2000&h=1400&dpr=1"
+                alt="Lackierer poliert ein Fahrzeug"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <p className="text-xs uppercase tracking-[0.2em] text-accent-primary font-bold mb-1">Finish</p>
+                <p className="text-lg font-display font-black">Glanz ohne Staub</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20 border-y border-gray-200">
+        <div className="max-w-5xl mx-auto px-4 space-y-10">
+          <div className="text-center space-y-3">
+            <span className="text-accent-primary font-bold uppercase tracking-[0.2em]">Karriere im Lack</span>
+            <h2 className="text-3xl md:text-4xl font-display font-black text-gray-900">Sauberes Finish, faire Bedingungen</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              Vom ersten Schliff bis zum Klarlack: wir kuratieren Stellen, die dein Handwerk respektieren – egal ob du in der Kabine, im Mischraum oder im Smart-Repair unterwegs bist.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="relative group overflow-hidden rounded-2xl shadow-xl border border-gray-100">
+              <div className="absolute inset-0 bg-gradient-to-tr from-accent-primary/10 via-transparent to-transparent" />
+              <img
+                src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=85"
+                alt="Farbmischung und Farbtonmessung"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-2xl font-display font-black text-gray-900">Industrie, PKW, Nutzfahrzeuge</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Pulverbeschichtung, Großflächen-Lackierung oder Spot-Repair: Mit klaren Aufgabenprofilen weißt du vorab, welche Materialien, Trocknungszeiten und Taktungen dich erwarten.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-3">
+                <div className="flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-lg p-3">
+                  <Wrench className="text-accent-primary" size={18} />
+                  <div>
+                    <p className="font-bold text-gray-900 text-sm">Ausstattung</p>
+                    <p className="text-gray-600 text-sm">Marken-PSA, Absaugung, Licht.</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-lg p-3">
+                  <Layers className="text-accent-primary" size={18} />
+                  <div>
+                    <p className="font-bold text-gray-900 text-sm">Prozesse</p>
+                    <p className="text-gray-600 text-sm">Klare Übergabe zwischen Teams.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-4 mb-12 text-center">
+          <span className="text-accent-primary font-bold uppercase tracking-[0.2em] mb-2 block">Impressionen</span>
+          <h3 className="text-3xl md:text-4xl font-display font-black text-gray-900">Lackierkabine, Mischraum & Smart-Repair</h3>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-3 gap-6">
+          {[
+            { src: 'https://images.pexels.com/photos/4489732/pexels-photo-4489732.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1', alt: 'Spritzpistole im Einsatz an einem Fahrzeug' },
+            { src: 'https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1', alt: 'Vorbereitung eines Stoßfängers' },
+            { src: 'https://images.pexels.com/photos/3806268/pexels-photo-3806268.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1', alt: 'Politur nach dem Lackieren' },
+            { src: 'https://images.unsplash.com/photo-1486365227551-f3f90034a57c?auto=format&fit=crop&w=1200&q=85', alt: 'Farbmischung für den Lackauftrag' },
+            { src: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=85', alt: 'Abgeklebte Karosserie in der Werkstatt' },
+            { src: 'https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=1200&q=85', alt: 'Lackierer bereitet Bauteil vor' },
+          ].map((img) => (
+            <div key={img.src} className="relative overflow-hidden rounded-2xl shadow-md border border-gray-100 group">
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className="py-20 relative bg-center bg-cover border-y border-gray-200"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=85')" }}
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white space-y-6">
+          <Star size={64} className="mx-auto text-accent-primary drop-shadow-lg" />
+          <blockquote className="text-3xl md:text-4xl font-display font-black leading-tight">
+            „Lackieren ist die Visitenkarte jeder Reparatur. Wir bringen dich zu Betrieben, die das verstanden haben.“
+          </blockquote>
+          <button
+            onClick={() => onNavigate(UserType.SEEKER)}
+            className="bg-accent-primary text-white font-display font-bold uppercase tracking-widest py-4 px-10 rounded-lg hover:bg-accent-hover transition-colors shadow-2xl"
+          >
+            Jetzt Karriere starten
+          </button>
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
         <div className="max-w-3xl mx-auto px-4">
-             <div className="text-center mb-16">
-                 <span className="text-accent-primary font-bold uppercase tracking-widest text-sm">Wissenswertes</span>
-                 <h2 className="text-3xl md:text-4xl font-display font-black text-gray-900 mt-2 uppercase">HÃ¤ufige Fragen</h2>
-             </div>
-             
-             <div className="space-y-4">
-                <div className="group bg-white border border-gray-200 hover:border-gray-300 p-8 rounded-lg shadow-sm transition-all duration-300">
-                    <h3 className="text-lg font-bold text-gray-900 uppercase mb-3 flex items-center group-hover:text-accent-primary transition-colors">
-                        <PenTool size={18} className="mr-3"/> Was verdient ein Fahrzeuglackierer?
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">Das Einstiegsgehalt liegt oft zwischen 2.400â‚¬ und 2.800â‚¬ brutto. Mit Erfahrung und Spezialisierung (z.B. Oldtimer, Industrie) sind GehÃ¤lter von 3.500â‚¬ bis Ã¼ber 4.500â‚¬ mÃ¶glich. Meister verdienen oft deutlich mehr.</p>
-                </div>
-                <div className="group bg-white border border-gray-200 hover:border-gray-300 p-8 rounded-lg shadow-sm transition-all duration-300">
-                    <h3 className="text-lg font-bold text-gray-900 uppercase mb-3 flex items-center group-hover:text-accent-primary transition-colors">
-                        <PenTool size={18} className="mr-3"/> Welche Voraussetzungen brauche ich?
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">Eine abgeschlossene Ausbildung als Fahrzeuglackierer oder Verfahrensmechaniker fÃ¼r Beschichtungstechnik ist Standard. Wichtiger sind jedoch PrÃ¤zision, Farbsicherheit und keine Angst vor moderner Technik.</p>
-                </div>
-                <div className="group bg-white border border-gray-200 hover:border-gray-300 p-8 rounded-lg shadow-sm transition-all duration-300">
-                    <h3 className="text-lg font-bold text-gray-900 uppercase mb-3 flex items-center group-hover:text-accent-primary transition-colors">
-                        <PenTool size={18} className="mr-3"/> Vermittelt LackiererStellen.de auch Helfer?
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">Unser Fokus liegt auf FachkrÃ¤ften. Jedoch bieten wir auch eine Rubrik fÃ¼r Lackierhelfer und Vorbereiter an, da diese fÃ¼r den Workflow in der Werkstatt unverzichtbar sind.</p>
-                </div>
-             </div>
+          <div className="text-center mb-12">
+            <span className="text-accent-primary font-bold uppercase tracking-[0.2em] text-sm">FAQs</span>
+            <h2 className="text-3xl md:text-4xl font-display font-black text-gray-900 mt-2">Häufige Fragen</h2>
+          </div>
+          
+          <div className="space-y-4">
+            <div className="group bg-gray-50 border border-gray-200 hover:border-accent-primary/40 p-6 rounded-xl shadow-sm transition-all duration-300">
+              <h3 className="text-lg font-bold text-gray-900 uppercase mb-3 flex items-center gap-3 group-hover:text-accent-primary">
+                <PenTool size={18} className="text-accent-primary" /> Was verdient ein Fahrzeuglackierer?
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                Einsteiger starten meist zwischen 2.400 und 2.800 EUR brutto. Mit Erfahrung in Farbtonmessung, Oldtimer oder Industrie liegen Gehälter oft bei 3.500–4.500 EUR. Meister und Teamleiter verdienen darüber.
+              </p>
+            </div>
+            <div className="group bg-gray-50 border border-gray-200 hover:border-accent-primary/40 p-6 rounded-xl shadow-sm transition-all duration-300">
+              <h3 className="text-lg font-bold text-gray-900 uppercase mb-3 flex items-center gap-3 group-hover:text-accent-primary">
+                <PenTool size={18} className="text-accent-primary" /> Welche Voraussetzungen brauche ich?
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                Eine Ausbildung als Fahrzeuglackierer oder Verfahrensmechaniker für Beschichtungstechnik ist ideal. Wichtig sind saubere Vorbereitung, Farbgefühl, Erfahrung mit Wasserbasislacken und Spaß an moderner Technik.
+              </p>
+            </div>
+            <div className="group bg-gray-50 border border-gray-200 hover:border-accent-primary/40 p-6 rounded-xl shadow-sm transition-all duration-300">
+              <h3 className="text-lg font-bold text-gray-900 uppercase mb-3 flex items-center gap-3 group-hover:text-accent-primary">
+                <PenTool size={18} className="text-accent-primary" /> Vermittelt Lackierstellenangebote.de auch Helfer?
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                Ja. Neben Fachkräften listen wir auch Stellen für Vorbereiter und Helfer, weil sie für den sauberen Workflow in der Lackierung unverzichtbar sind.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-
+      </section>
     </div>
   );
 };
-
 

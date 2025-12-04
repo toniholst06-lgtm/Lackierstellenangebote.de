@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Job } from '../types';
 import { JobCard } from '../components/JobCard';
 import { MapPin, Search, Clock, CheckCircle2, Layers, SprayCan, Sparkles } from 'lucide-react';
@@ -30,33 +30,33 @@ const LACKIER_JOBS: Job[] = [
   {
     id: 'lack-3',
     title: 'Industrielackierer (m/w/d) Pulverbeschichtung',
-    company: 'Oberflaeche GmbH',
+    company: 'Oberfläche GmbH',
     location: 'Leipzig',
     type: 'Vollzeit',
     salary: '2.900 - 3.300 EUR',
-    description: 'Pulverbeschichtung von Serienbauteilen, Qualitaetspruefung und Dokumentation im 2-Schicht-Modell.',
-    tags: ['Industrie', 'Pulverbeschichtung', 'Qualitaet'],
+    description: 'Pulverbeschichtung von Serienbauteilen, Qualitätsprüfung und Dokumentation im 2-Schicht-Modell.',
+    tags: ['Industrie', 'Pulverbeschichtung', 'Qualität'],
     postedDate: 'Vor 3 Tagen',
   },
   {
     id: 'lack-4',
     title: 'Lackierer (m/w/d) Nutzfahrzeuge',
     company: 'Truck & Paint',
-    location: 'Koeln',
+    location: 'Köln',
     type: 'Vollzeit',
     salary: '3.100 - 3.700 EUR',
-    description: 'Grossflaechen-Lackierung von LKW-Aufbauten, Untergrundvorbereitung und Versiegelung.',
-    tags: ['LKW', 'Grossflaeche', 'Versiegelung'],
+    description: 'Großflächen-Lackierung von LKW-Aufbauten, Untergrundvorbereitung und Versiegelung.',
+    tags: ['LKW', 'Großfläche', 'Versiegelung'],
     postedDate: 'Vor 4 Tagen',
   },
   {
     id: 'lack-5',
     title: 'Ausbildung zum Fahrzeuglackierer (m/w/d)',
     company: 'Lackiererei Farbenreich',
-    location: 'Muenchen',
+    location: 'München',
     type: 'Ausbildung',
     salary: 'Tarif',
-    description: 'Ausbildung mit modernen Trocknungsanlagen, erfahrenen Ausbildern und Uebernahmechance.',
+    description: 'Ausbildung mit modernen Trocknungsanlagen, erfahrenen Ausbildern und Übernahmechance.',
     tags: ['Ausbildung', 'PSA', 'Kabine'],
     postedDate: 'Vor 1 Woche',
   },
@@ -64,10 +64,10 @@ const LACKIER_JOBS: Job[] = [
     id: 'lack-6',
     title: 'Smart-Repair Spezialist (m/w/d)',
     company: 'City Smart Repair',
-    location: 'Duesseldorf',
+    location: 'Düsseldorf',
     type: 'Teilzeit',
     salary: '2.800 - 3.200 EUR',
-    description: 'Kleinlackierungen, Dellen- und Kratzerbeseitigung mit mobilen Einsaetzen und flexiblen Zeiten.',
+    description: 'Kleinlackierungen, Dellen- und Kratzerbeseitigung mit mobilen Einsätzen und flexiblen Zeiten.',
     tags: ['Smart Repair', 'Mobil', 'Flexibel'],
     postedDate: 'Vor 5 Tagen',
   },
@@ -99,19 +99,27 @@ export const Lackierstellenangebote: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
-      <section className="relative overflow-hidden border-b border-gray-200 bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white py-16">
-        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_10%_10%,rgba(239,35,60,0.2),transparent_25%),radial-gradient(circle_at_80%_0%,rgba(255,255,255,0.1),transparent_30%)]" />
+      <section className="relative overflow-hidden border-b border-gray-200 bg-gradient-to-r from-gray-900 via-gray-950 to-black text-white py-16">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.pexels.com/photos/3806268/pexels-photo-3806268.jpeg?auto=compress&cs=tinysrgb&w=2000&h=1400&dpr=1"
+            alt="Lackierer arbeitet am Fahrzeug"
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_10%_10%,rgba(249,115,22,0.2),transparent_25%),radial-gradient(circle_at_80%_0%,rgba(255,255,255,0.12),transparent_30%)]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-10 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs font-bold uppercase tracking-[0.2em]">
               <span className="w-2 h-2 rounded-full bg-accent-primary animate-pulse"></span>
               Lackierstellen bundesweit
             </div>
-            <h1 className="text-4xl md:text-5xl font-display font-black leading-tight mb-4">
+            <h1 className="text-4xl md:text-5xl font-display font-black leading-tight">
               Lackierer-Jobs mit klaren Prozessen & moderner Ausstattung
             </h1>
-            <p className="text-lg text-gray-200 max-w-2xl mb-6">
-              Werkstatt, Industrie oder Smart-Repair: Finde Stellen mit sauberen Kabinen, fairer Bezahlung und schnellen Rueckmeldungen.
+            <p className="text-lg text-gray-200 max-w-2xl">
+              Werkstatt, Industrie oder Smart-Repair: Finde Stellen mit sauberer Kabine, fairer Bezahlung und schnellen Rückmeldungen.
             </p>
             <div className="flex flex-wrap gap-3">
               <button
@@ -131,7 +139,7 @@ export const Lackierstellenangebote: React.FC = () => {
               </button>
             </div>
 
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
               <div className="flex items-center gap-3 bg-white/5 rounded-lg p-3 border border-white/10">
                 <SprayCan className="text-accent-primary" size={18} />
                 <div>
@@ -150,18 +158,18 @@ export const Lackierstellenangebote: React.FC = () => {
                 <Sparkles className="text-accent-primary" size={18} />
                 <div>
                   <p className="font-semibold">Faire Deals</p>
-                  <p className="text-gray-300">Gehalt & Ueberstunden geregelt</p>
+                  <p className="text-gray-300">Gehalt & Überstunden geregelt</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-2xl">
+          <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-2xl">
             <p className="text-sm uppercase tracking-[0.25em] text-gray-300 mb-3">Warum hier suchen?</p>
             <ul className="space-y-3 text-gray-100">
-              <li className="flex items-center gap-3"><CheckCircle2 className="text-accent-primary" size={18} /> Gepruefte Werkstaetten und Betriebe</li>
-              <li className="flex items-center gap-3"><CheckCircle2 className="text-accent-primary" size={18} /> Rueckmeldung oft unter 24 Stunden</li>
-              <li className="flex items-center gap-3"><CheckCircle2 className="text-accent-primary" size={18} /> Transparentes Gehalt & PSA</li>
+              <li className="flex items-center gap-3"><CheckCircle2 className="text-accent-primary" size={18} /> Geprüfte Werkstätten und Betriebe</li>
+              <li className="flex items-center gap-3"><CheckCircle2 className="text-accent-primary" size={18} /> Rückmeldung oft unter 24 Stunden</li>
+              <li className="flex items-center gap-3"><CheckCircle2 className="text-accent-primary" size={18} /> Transparente Gehaltsbänder & PSA</li>
               <li className="flex items-center gap-3"><CheckCircle2 className="text-accent-primary" size={18} /> Smart-Repair, Industrie, Nutzfahrzeuge</li>
             </ul>
           </div>
@@ -197,7 +205,7 @@ export const Lackierstellenangebote: React.FC = () => {
               Filtern
             </button>
           </div>
-          <p className="text-sm text-gray-500 mt-3">Tipp: Suche nach "Ausbildung" oder "Smart" fuer spezielle Bereiche.</p>
+          <p className="text-sm text-gray-500 mt-3">Tipp: Suche nach „Ausbildung“ oder „Smart“ für spezielle Bereiche.</p>
         </div>
       </section>
 
@@ -223,7 +231,7 @@ export const Lackierstellenangebote: React.FC = () => {
                   onClick={() => { setSearchTerm(''); setLocationTerm(''); }}
                   className="mt-3 text-accent-primary font-bold hover:underline"
                 >
-                  Filter zuruecksetzen
+                  Filter zurücksetzen
                 </button>
               </div>
             )}
@@ -267,7 +275,7 @@ export const Lackierstellenangebote: React.FC = () => {
                 </div>
               </div>
             ) : (
-              <div className="text-center text-gray-500">Waehle eine Stelle aus der Liste.</div>
+              <div className="text-center text-gray-500">Wähle eine Stelle aus der Liste.</div>
             )}
           </div>
         </div>
@@ -276,18 +284,18 @@ export const Lackierstellenangebote: React.FC = () => {
       <section className="bg-white border-t border-gray-200 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-6">
           <div className="p-6 border border-gray-200 rounded-xl bg-gray-50">
-            <p className="text-xs uppercase tracking-widest font-bold text-accent-primary mb-2">Fuer Bewerber</p>
+            <p className="text-xs uppercase tracking-widest font-bold text-accent-primary mb-2">Für Bewerber</p>
             <h3 className="text-xl font-display font-black text-gray-900 mb-3">Saubere Prozesse</h3>
-            <p className="text-gray-600">Nur gepruefte Werkstaetten mit klaren Taktzeiten, moderner PSA und schneller Rueckmeldung.</p>
+            <p className="text-gray-600">Nur geprüfte Werkstätten mit klaren Taktzeiten, moderner PSA und schneller Rückmeldung.</p>
           </div>
           <div className="p-6 border border-gray-200 rounded-xl bg-gray-50">
-            <p className="text-xs uppercase tracking-widest font-bold text-accent-primary mb-2">Fuer Einsteiger</p>
+            <p className="text-xs uppercase tracking-widest font-bold text-accent-primary mb-2">Für Einsteiger</p>
             <h3 className="text-xl font-display font-black text-gray-900 mb-3">Ausbildung & Aufstieg</h3>
-            <p className="text-gray-600">Ausbildungsplaetze mit Uebernahmechance sowie Chancen auf Meister- oder Teamleiterrolle.</p>
+            <p className="text-gray-600">Ausbildungsplätze mit Übernahmechance sowie Chancen auf Meister- oder Teamleiterrolle.</p>
           </div>
           <div className="p-6 border border-gray-200 rounded-xl bg-gray-50">
-            <p className="text-xs uppercase tracking-widest font-bold text-accent-primary mb-2">Fuer Betriebe</p>
-            <h3 className="text-xl font-display font-black text-gray-900 mb-3">Passende Fachkraefte</h3>
+            <p className="text-xs uppercase tracking-widest font-bold text-accent-primary mb-2">Für Betriebe</p>
+            <h3 className="text-xl font-display font-black text-gray-900 mb-3">Passende Fachkräfte</h3>
             <p className="text-gray-600">Positionen werden klar beschrieben, damit nur passende Bewerber anklopfen.</p>
           </div>
         </div>
@@ -295,3 +303,4 @@ export const Lackierstellenangebote: React.FC = () => {
     </div>
   );
 };
+
