@@ -2,19 +2,41 @@ import React, { useState } from 'react';
 import { MOCK_JOBS } from '../services/mockData';
 import { JobCard } from '../components/JobCard';
 import { Job } from '../types';
-import { Search, MapPin, X, CheckSquare, Briefcase } from 'lucide-react';
+import { Search, MapPin, X, CheckSquare, Briefcase, FileText, Phone, Mail } from 'lucide-react';
 
 export const JobSeeker = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [locationTerm, setLocationTerm] = useState('');
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
+  const [isApplyOpen, setIsApplyOpen] = useState(false);
+  const [applyStatus, setApplyStatus] = useState<string | null>(null);
+  const [applyData, setApplyData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+    documentsLink: '',
+  });
 
-  const filteredJobs = MOCK_JOBS.filter(job => {
-    const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          job.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+  const filteredJobs = MOCK_JOBS.filter((job) => {
+    const matchesSearch =
+      job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()));
     const matchesLocation = job.location.toLowerCase().includes(locationTerm.toLowerCase());
     return matchesSearch && matchesLocation;
   });
+
+  const handleApplySubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!applyData.name || !applyData.email || !selectedJob) {
+      setApplyStatus('Bitte Name, E-Mail und Job auswählen.');
+      return;
+    }
+    setApplyStatus('Bewerbung versendet. Wir melden uns zeitnah.');
+    setApplyData({ name: '', email: '', phone: '', message: '', documentsLink: '' });
+    setIsApplyOpen(false);
+    alert('Danke! Deine Bewerbung wurde übermittelt.');
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-gray-900">
@@ -163,8 +185,14 @@ export const JobSeeker = () => {
                             <span className="text-gray-900 font-medium">Ab sofort möglich</span>
                         </div>
 
-                        <button className="w-full bg-accent-primary text-white font-bold uppercase tracking-widest py-4 rounded-lg hover:bg-accent-hover transition-colors mb-3 shadow-lg">
-                        Jetzt Bewerben
+                        <button
+                          onClick={() => {
+                            setIsApplyOpen(true);
+                            setApplyStatus(null);
+                          }}
+                          className="w-full bg-accent-primary text-white font-bold uppercase tracking-widest py-4 rounded-lg hover:bg-accent-hover transition-colors mb-3 shadow-lg"
+                        >
+                          Jetzt bewerben
                         </button>
                         <button 
                         onClick={() => setSelectedJob(null)}
@@ -177,6 +205,106 @@ export const JobSeeker = () => {
               </div>
             </div>
 
+          </div>
+        </div>
+      )}
+
+      {isApplyOpen && selectedJob && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <div className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em] text-accent-primary font-bold">Bewerbung</p>
+                <h3 className="text-xl font-display font-black text-gray-900">{selectedJob.title}</h3>
+                <p className="text-sm text-gray-600">{selectedJob.company} · {selectedJob.location}</p>
+              </div>
+              <button
+                onClick={() => { setIsApplyOpen(false); setApplyStatus(null); }}
+                className="p-2 bg-gray-100 rounded-full text-gray-500 hover:text-black hover:bg-gray-200 transition-colors"
+                aria-label="Schließen"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <form onSubmit={handleApplySubmit} className="px-6 py-6 space-y-4 overflow-y-auto">
+              <div className="grid md:grid-cols-2 gap-4">
+                <label className="text-sm font-semibold text-gray-800 flex flex-col gap-2">
+                  <span className="flex items-center gap-2"><FileText size={16} className="text-accent-primary" /> Name*</span>
+                  <input
+                    value={applyData.name}
+                    onChange={(e) => setApplyData({ ...applyData, name: e.target.value })}
+                    className="w-full border border-gray-200 rounded-lg px-3 py-3 focus:outline-none focus:border-accent-primary"
+                    placeholder="Vor- und Nachname"
+                    required
+                  />
+                </label>
+                <label className="text-sm font-semibold text-gray-800 flex flex-col gap-2">
+                  <span className="flex items-center gap-2"><Mail size={16} className="text-accent-primary" /> E-Mail*</span>
+                  <input
+                    type="email"
+                    value={applyData.email}
+                    onChange={(e) => setApplyData({ ...applyData, email: e.target.value })}
+                    className="w-full border border-gray-200 rounded-lg px-3 py-3 focus:outline-none focus:border-accent-primary"
+                    placeholder="mail@example.com"
+                    required
+                  />
+                </label>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <label className="text-sm font-semibold text-gray-800 flex flex-col gap-2">
+                  <span className="flex items-center gap-2"><Phone size={16} className="text-accent-primary" /> Telefon</span>
+                  <input
+                    value={applyData.phone}
+                    onChange={(e) => setApplyData({ ...applyData, phone: e.target.value })}
+                    className="w-full border border-gray-200 rounded-lg px-3 py-3 focus:outline-none focus:border-accent-primary"
+                    placeholder="+49 ..."
+                  />
+                </label>
+                <label className="text-sm font-semibold text-gray-800 flex flex-col gap-2">
+                  <span className="flex items-center gap-2"><FileText size={16} className="text-accent-primary" /> Unterlagen (Link)</span>
+                  <input
+                    value={applyData.documentsLink}
+                    onChange={(e) => setApplyData({ ...applyData, documentsLink: e.target.value })}
+                    className="w-full border border-gray-200 rounded-lg px-3 py-3 focus:outline-none focus:border-accent-primary"
+                    placeholder="Link zu PDF/Portfolio/Cloud"
+                  />
+                </label>
+              </div>
+
+              <label className="text-sm font-semibold text-gray-800 flex flex-col gap-2">
+                <span>Nachricht</span>
+                <textarea
+                  value={applyData.message}
+                  onChange={(e) => setApplyData({ ...applyData, message: e.target.value })}
+                  className="w-full border border-gray-200 rounded-lg px-3 py-3 focus:outline-none focus:border-accent-primary min-h-[120px]"
+                  placeholder="Kurz zu Erfahrung, Kabine/Smart-Repair, Startdatum..."
+                />
+              </label>
+
+              {applyStatus && (
+                <div className="text-sm text-green-700 bg-green-50 border border-green-100 rounded-lg px-4 py-3">
+                  {applyStatus}
+                </div>
+              )}
+
+              <div className="flex justify-end gap-3 pt-2">
+                <button
+                  type="button"
+                  onClick={() => { setIsApplyOpen(false); setApplyStatus(null); }}
+                  className="px-4 py-3 text-gray-600 font-bold uppercase tracking-widest hover:text-gray-900"
+                >
+                  Abbrechen
+                </button>
+                <button
+                  type="submit"
+                  className="px-6 py-3 bg-accent-primary text-white font-bold uppercase tracking-widest rounded-lg hover:bg-accent-hover transition-colors shadow-lg"
+                >
+                  Bewerbung senden
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       )}

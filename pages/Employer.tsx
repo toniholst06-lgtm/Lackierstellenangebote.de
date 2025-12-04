@@ -14,6 +14,15 @@ export const Employer = () => {
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedContent, setGeneratedContent] = useState<AIGeneratedJobContent | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [isSubmitOpen, setIsSubmitOpen] = useState(false);
+  const [jobSubmitStatus, setJobSubmitStatus] = useState<string | null>(null);
+  const [jobSubmitData, setJobSubmitData] = useState({
+    company: '',
+    title: '',
+    location: '',
+    contact: '',
+    description: '',
+  });
 
   const handleGenerate = async () => {
     if (!formData.jobTitle || !formData.companyName) {
@@ -49,6 +58,18 @@ export const Employer = () => {
     }
   };
 
+  const handleJobSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!jobSubmitData.company || !jobSubmitData.title || !jobSubmitData.contact) {
+      setJobSubmitStatus('Bitte Firma, Titel und Kontakt angeben.');
+      return;
+    }
+    setJobSubmitStatus('Stelle eingereicht. Wir melden uns mit den nächsten Schritten.');
+    alert('Danke! Ihre Stelle wurde eingereicht.');
+    setJobSubmitData({ company: '', title: '', location: '', contact: '', description: '' });
+    setIsSubmitOpen(false);
+  };
+
   const handlePublish = (e: React.FormEvent) => {
     e.preventDefault();
     alert('Vielen Dank! Ihre Anzeige wurde zur Prüfung eingereicht.');
@@ -75,6 +96,14 @@ export const Employer = () => {
                 <p className="text-gray-200 max-w-xl mx-auto text-lg font-light">
                     Erstellen Sie in wenigen Minuten eine professionelle Stellenanzeige mit Hilfe unserer KI – optimiert für Lackierer, Vorbereiter und Smart-Repair.
                 </p>
+                <div className="flex justify-center">
+                  <button
+                    onClick={() => { setIsSubmitOpen(true); setJobSubmitStatus(null); }}
+                    className="mt-2 px-6 py-3 bg-accent-primary text-white font-display font-bold uppercase tracking-widest rounded-lg shadow-lg hover:bg-accent-hover transition-colors"
+                  >
+                    Stelle jetzt einstellen
+                  </button>
+                </div>
              </div>
         </div>
 
@@ -276,6 +305,106 @@ export const Employer = () => {
             </div>
         </div>
       </div>
+
+      {isSubmitOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <div className="bg-white w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em] text-accent-primary font-bold">Stelle einreichen</p>
+                <h3 className="text-xl font-display font-black text-gray-900">Lackierer / Smart-Repair / Vorbereitung</h3>
+              </div>
+              <button
+                onClick={() => { setIsSubmitOpen(false); setJobSubmitStatus(null); }}
+                className="p-2 bg-gray-100 rounded-full text-gray-500 hover:text-black hover:bg-gray-200 transition-colors"
+                aria-label="Schließen"
+              >
+                <Sparkles size={16} />
+              </button>
+            </div>
+
+            <form onSubmit={handleJobSubmit} className="px-6 py-6 space-y-4">
+              <div className="grid md:grid-cols-2 gap-4">
+                <label className="text-sm font-semibold text-gray-800 flex flex-col gap-2">
+                  <span>Unternehmen*</span>
+                  <input
+                    value={jobSubmitData.company}
+                    onChange={(e) => setJobSubmitData({ ...jobSubmitData, company: e.target.value })}
+                    className="w-full border border-gray-200 rounded-lg px-3 py-3 focus:outline-none focus:border-accent-primary"
+                    placeholder="Lackiererei Beispiel GmbH"
+                    required
+                  />
+                </label>
+                <label className="text-sm font-semibold text-gray-800 flex flex-col gap-2">
+                  <span>Stellentitel*</span>
+                  <input
+                    value={jobSubmitData.title}
+                    onChange={(e) => setJobSubmitData({ ...jobSubmitData, title: e.target.value })}
+                    className="w-full border border-gray-200 rounded-lg px-3 py-3 focus:outline-none focus:border-accent-primary"
+                    placeholder="Fahrzeuglackierer (m/w/d)"
+                    required
+                  />
+                </label>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <label className="text-sm font-semibold text-gray-800 flex flex-col gap-2">
+                  <span>Standort</span>
+                  <input
+                    value={jobSubmitData.location}
+                    onChange={(e) => setJobSubmitData({ ...jobSubmitData, location: e.target.value })}
+                    className="w-full border border-gray-200 rounded-lg px-3 py-3 focus:outline-none focus:border-accent-primary"
+                    placeholder="Stadt / Region"
+                  />
+                </label>
+                <label className="text-sm font-semibold text-gray-800 flex flex-col gap-2">
+                  <span>Kontakt-E-Mail*</span>
+                  <input
+                    type="email"
+                    value={jobSubmitData.contact}
+                    onChange={(e) => setJobSubmitData({ ...jobSubmitData, contact: e.target.value })}
+                    className="w-full border border-gray-200 rounded-lg px-3 py-3 focus:outline-none focus:border-accent-primary"
+                    placeholder="jobs@firma.de"
+                    required
+                  />
+                </label>
+              </div>
+
+              <label className="text-sm font-semibold text-gray-800 flex flex-col gap-2">
+                <span>Kurzbeschreibung / Anforderungen</span>
+                <textarea
+                  value={jobSubmitData.description}
+                  onChange={(e) => setJobSubmitData({ ...jobSubmitData, description: e.target.value })}
+                  className="w-full border border-gray-200 rounded-lg px-3 py-3 focus:outline-none focus:border-accent-primary min-h-[130px]"
+                  placeholder="Kabine, Wasserlack, Smart-Repair, Schichtmodell, Gehalt, Startdatum..."
+                />
+              </label>
+
+              {jobSubmitStatus && (
+                <div className="text-sm text-green-700 bg-green-50 border border-green-100 rounded-lg px-4 py-3">
+                  {jobSubmitStatus}
+                </div>
+              )}
+
+              <div className="flex justify-end gap-3 pt-2">
+                <button
+                  type="button"
+                  onClick={() => { setIsSubmitOpen(false); setJobSubmitStatus(null); }}
+                  className="px-4 py-3 text-gray-600 font-bold uppercase tracking-widest hover:text-gray-900"
+                >
+                  Abbrechen
+                </button>
+                <button
+                  type="submit"
+                  className="px-6 py-3 bg-accent-primary text-white font-bold uppercase tracking-widest rounded-lg hover:bg-accent-hover transition-colors shadow-lg"
+                >
+                  Stelle einreichen
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
