@@ -172,11 +172,11 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="relative group overflow-hidden rounded-2xl shadow-xl border border-gray-100">
+              <div className="relative group overflow-hidden rounded-2xl shadow-xl border border-gray-100">
               <div className="absolute inset-0 bg-gradient-to-tr from-accent-primary/10 via-transparent to-transparent" />
               <img
-                src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=85"
-                alt="Farbmischung und Farbtonmessung"
+                src="https://images.pexels.com/photos/4489732/pexels-photo-4489732.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1100&dpr=1"
+                alt="Lackierer trägt Basislack mit Spritzpistole auf"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
@@ -212,13 +212,13 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
           <h3 className="text-3xl md:text-4xl font-display font-black text-gray-900">Lackierkabine, Mischraum & Smart-Repair</h3>
         </div>
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-3 gap-6">
-          {[
-            { src: 'https://images.pexels.com/photos/4489732/pexels-photo-4489732.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1', alt: 'Spritzpistole im Einsatz an einem Fahrzeug' },
-            { src: 'https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1', alt: 'Vorbereitung eines Stoßfängers' },
-            { src: 'https://images.pexels.com/photos/3806268/pexels-photo-3806268.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1', alt: 'Politur nach dem Lackieren' },
-            { src: 'https://images.unsplash.com/photo-1486365227551-f3f90034a57c?auto=format&fit=crop&w=1200&q=85', alt: 'Farbmischung für den Lackauftrag' },
-            { src: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=85', alt: 'Abgeklebte Karosserie in der Werkstatt' },
-            { src: 'https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=1200&q=85', alt: 'Lackierer bereitet Bauteil vor' },
+            {[
+              { src: 'https://images.pexels.com/photos/4489732/pexels-photo-4489732.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1', alt: 'Spritzpistole im Einsatz an einem Fahrzeug' },
+              { src: 'https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1', alt: 'Vorbereitung eines Stoßfängers' },
+              { src: 'https://images.pexels.com/photos/3806268/pexels-photo-3806268.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1', alt: 'Politur nach dem Lackieren' },
+              { src: 'https://images.unsplash.com/photo-1486365227551-f3f90034a57c?auto=format&fit=crop&w=1200&q=85', alt: 'Farbmischung für den Lackauftrag' },
+            { src: 'https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1', alt: 'Abgeklebte Karosserie in der Werkstatt' },
+            { src: 'https://images.pexels.com/photos/4489732/pexels-photo-4489732.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1', alt: 'Lackierer bereitet Bauteil vor' },
           ].map((img) => (
             <div key={img.src} className="relative overflow-hidden rounded-2xl shadow-md border border-gray-100 group">
               <img
@@ -234,7 +234,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
       <section
         className="py-20 relative bg-center bg-cover border-y border-gray-200"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=85')" }}
+        style={{ backgroundImage: "url('https://images.pexels.com/photos/3806268/pexels-photo-3806268.jpeg?auto=compress&cs=tinysrgb&w=2000&h=1400&dpr=1')" }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white space-y-6">
@@ -289,4 +289,3 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
     </div>
   );
 };
-
